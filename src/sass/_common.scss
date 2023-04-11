@@ -1,1 +1,43 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+@import './utils/vars';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: $main-font;
+  font-style: normal;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 320px) {
+    width: 320px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
+}
