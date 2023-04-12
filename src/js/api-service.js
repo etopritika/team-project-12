@@ -44,8 +44,7 @@ export default class ApiService {
   decrementPage() {
     this.page = this.page - 1;
   }
-
-
+  
   get query() {
     return this.searchQuery;
   }
