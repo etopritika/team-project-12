@@ -11,4 +11,6 @@ function onSearch(e) {
 }
 
 
-apiService.fetchPopular();//Повертає масив популярних фільмів
+// apiService.fetchTrending();//Повертає масив популярних фільмів
+// apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму
+// apiService.fetchTrailer();//Повертає інфо про трейлер
