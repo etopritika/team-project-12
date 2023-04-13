@@ -4,6 +4,8 @@ const apiService = new ApiService();
 const form = document.querySelector('#search-form');
 form.addEventListener('submit', onSearch);
 
+//https://image.tmdb.org/t/p/w500{посилання на картинку}
+
 function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
