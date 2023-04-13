@@ -7,8 +7,8 @@ const LANGUAGE = 'en';
 export default class ApiService {
   constructor() {
     this.searchQuery = ''; //Що шукаємо
-    this.page = 1;
-    this.movieId = '';
+    this.page = 1; //Пагінація
+    this.movieId = ''; //Пошук по id
   }
 
   fetchArticles() {

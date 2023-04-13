@@ -15,5 +15,5 @@ function onSearch(e) {
 //https://image.tmdb.org/t/p/w500{посилання на картинку}
 
 // apiService.fetchTrending();//Повертає масив популярних фільмів
-apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму
+// apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму
 // apiService.fetchTrailer();//Повертає інфо про трейлер
