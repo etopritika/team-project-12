@@ -27,14 +27,14 @@ function renderMovies(movies) {
               movie.poster_path
             }" alt="${movie.title}" />
           </a>
-          <div class="movie-card__title">
+          <h2 class="movie-card__title">
             <a class="movie-card__link" href="https://www.themoviedb.org/movie/${
               movie.id
             }">
               ${movie.title}
             </a>
-          </div>
-          <div class="movie-card__genre">
+          </h2>
+          <p class="movie-card__genre">
           ${movie.genre_ids
             .map(
               genre_id =>
@@ -43,14 +43,14 @@ function renderMovies(movies) {
                 )}</a>`
             )
             .join(', ')}
-        </div>
-        <div class="movie-card__release-date">
+        </p>
+        <p class="movie-card__release-date">
           <a class="movie-card__link" href="https://www.themoviedb.org/movie/${
             movie.id
           }?language=en-US">
             ${movie.release_date.split('-')[0]}
           </a>
-        </div>
+        </p>
         </li>
       `
     )
