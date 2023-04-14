@@ -1,10 +1,22 @@
 <header>
-  <form class="search-form" id="search-form">
-    <input
-      type="text"
-      name="query"
-      autocomplete="off"
-      placeholder="Movie search"
-    />
-  </form>
+  <div class="container header">
+    <nav class="headermenu">
+      <ul class="headermenu__list">
+        <li><button type="button" class="headermenu__item headermenu__current">Home</button></li>
+        <li><button type="button" class="headermenu__item">My library</button></li>
+      </ul>
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Movie search"
+        />
+      </form>
+    </nav>
+    <div class="title">
+      <svg class="title_logo" width="26.67px" height="26.67px"><use href="/src/images/logo/logo_mob_1x.png"></use></svg>
+      <p>Filmoteka</p>
+    </div>
+  </div>
 </header>
