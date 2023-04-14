@@ -13,7 +13,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .movie-card {
-    grid-template-columns: 336px 336px;
+    grid-template-columns: repeat(2, 336px);
     column-gap: 32px;
     row-gap: 32px;
   }
@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 1280px) {
   .movie-card {
-    grid-template-columns: 395px 395px 395px;
+    grid-template-columns: repeat(3, 395px);
     column-gap: 16px;
     row-gap: 32px;
   }
