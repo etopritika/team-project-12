@@ -1,0 +1,42 @@
+.movie-card {
+  display: grid;
+  justify-content: center;
+}
+
+@media screen and (min-width: 320px) {
+  .movie-card {
+    grid-template-columns: 280px;
+
+    &__item:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .movie-card {
+    grid-template-columns: 336px 336px;
+
+    &__item:nth-child(odd) {
+      margin-right: 32px;
+    }
+
+    &__item:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movie-card {
+    grid-template-columns: 395px 395px 395px;
+
+    &__item:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 32px;
+    }
+
+    &__item:not(:nth-child(3n)) {
+      margin-right: 16px;
+    }
+  }
+}
