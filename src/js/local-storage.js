@@ -1,4 +1,4 @@
-const poster_path = document.querySelector('.modal-img').getAttribute('src');
+// const poster_path = document.querySelector('.modal-img').getAttribute('src');
 const title = document.querySelector('h2').textContent;
 const vote_average = document.querySelector('.vote').textContent;
 const vote_count = document.querySelector('.votes').textContent;
