@@ -12,6 +12,13 @@
           autocomplete="off"
           placeholder="Movie search"
         />
+        <button type="submit">
+          <img 
+          srcset="/src/images/logo/searchicon_1x.png 1x, /src/images/logo/searchicon_2x.png 2x"
+          src="/src/images/logo/searchicon_1x.png"
+          alt="search icon"
+          />
+        </button>
       </form>
       <ul class="headermenu__buttons library__buttons">
         <li><button type="button" class="headermenu__button headermenu__current">Watched</button></li>
@@ -19,18 +26,13 @@
       </ul>
     </nav>
     <a><div class="title">
-      <svg class="logo" width="26.67px" height="26.67px"><use href="/src/images/logo/logo_mob_1x.png"></use></svg>
-      <picture>
-        <source
-            media="(max-width: 767px)"
-            srcset="/src/images/logo/logo_mob_1x.png">
-        <source
-            media="(max-width: 1179px)"
-            srcset="/src/images/logo/logo_tab_1x.png">
-        <source
-            srcset="/src/images/logo/logo_desktop_1x.png">     
-        <img src="/src/images/logo/logo_desktop_1x.png" alt="Logo Filmoteka">
-    </picture>
+      <img
+        width="26.67px" 
+        height="26.67px"
+        srcset="/src/images/logo/logo_mob_1x.png 300w, /src/images/logo/logo_tab_1x.png 600w, /src/images/logo/logo_desktop_1x.png 100vw"
+        src="/src/images/logo/logo_desktop_1x.png"
+        alt="Logo Filmoteka"
+    />
       <p class="title_text">Filmoteka</p>
     </div>
     </a>
