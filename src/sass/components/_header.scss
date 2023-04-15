@@ -1,3 +1,7 @@
+.container {
+    padding-left: 0px;
+}
+
 .header {
     min-width: 280px;
     height: 460px;
@@ -22,17 +26,17 @@
 }
 
 nav {
-    margin-top: 14px;
+    padding-top: 14px;
     margin-left: 14px;
 
     @media screen and (min-width: 768px) {
         margin-left: 16px;
-        margin-top: 16px;
+        padding-top: 16px;
     }
 
     @media screen and (min-width: 1280px) {
         margin-left: 32px;
-        margin-top: 32px;
+        padding-top: 32px;
     }
 }
 
@@ -158,6 +162,10 @@ nav {
     justify-content: center;
     text-align: center;
     padding-bottom: 20px;
+
+    @media screen and (max-width: 767px) {
+    margin-top: 280px;
+    }
 
     @media screen and (min-width: 768px) {
         padding-bottom: 16px;
