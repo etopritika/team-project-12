@@ -30,7 +30,7 @@ function renderMovies(movies) {
   movieTrand.innerHTML = movies
     .map(
       movie => `
-        <li class="movie-card__item">
+        <li class="movie-card__item" data-filmId="${movie.id}">
             <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
             <h2 class="movie-card__title">
               ${movie.title}

@@ -16,27 +16,26 @@ function onOpenModal() {
 
 function appendModalMarkup(movie) { 
     console.log(movie);    
-    const cardOfFilms = movie.map(({poster_path, title, vote_average, vote_count, popularity, original_title, genres, overview}) => {
-        return `
+    const cardOfFilms = `
             <button>close</button>
             <div>
-            <img  class="modal-img" src=${poster_path} alt=${title} />
+            <img  class="modal-img" src=${movie.poster_path} alt=${movie.title} />
             </div>
             <div>
-             <h2 class="title">${title}</h2>
+             <h2 class="title">${movie.title}</h2>
              <ul>
-                 <li><span>Vote / Votes</span><span class="vote">${vote_average} ${vote_count}</span></li>
-                 <li><span>Popularity</span><span class="popularity">${popularity}</span></li>
-                 <li><span>Original Title</span><span class="original-title">${original_title}</span></li>
-                 <li><span>Genre</span><span class="genres">${genres}</span></li>
+                 <li><span>Vote / Votes</span><span class="vote">${movie.vote_average} ${movie.vote_count}</span></li>
+                 <li><span>Popularity</span><span class="popularity">${movie.popularity}</span></li>
+                 <li><span>Original Title</span><span class="original-title">${movie.original_title}</span></li>
+                 <li><span>Genre</span><span class="genres">${movie.genres}</span></li>
              </ul>
              <h3>About</h3>
-             <p class="overview">${overview}</p>
+             <p class="overview">${movie.overview}</p>
              <div>
              <button class="add-watched">add to Watched</button>
              <button class="add-queue">add to queue</button>
              </div>
-             </div>`;}).join('');
+             </div>`;
       
           refs.modalConteiner.innerHTML = cardOfFilms;
       }
