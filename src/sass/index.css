@@ -45,9 +45,46 @@ body {
   }
 }
 
-header {
-  background-color: teal;
-  width: 100%;
+.header {
+  min-width: 280px;
+  height: 460px;
+  background-image: url(/src/images/header/red_background_mobile_1x.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    width: 704px;
+    height: 222px;
+    background-image: url(/src/images/header/red_background_desktop_1x.jpg);
+    border-radius: 15px;
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    width: 1216px;
+    height: 316px;
+  }
+}
+
+nav {
+  margin-top: 14px;
+  margin-left: 14px;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  nav {
+    margin-left: 32px;
+    margin-top: 32px;
+  }
 }
 
 .headermenu__list, .headermenu__buttons {
@@ -55,6 +92,7 @@ header {
   align-items: center;
   text-align: center;
   gap: 4px;
+  margin-bottom: 4px;
 }
 
 .headermenu__item, .headermenu__button {
