@@ -100,16 +100,34 @@ header {
   background-color: #B92F2C;
 }
 
-form input {
+.search-form {
+  position: absolute;
+  width: 252px;
+  height: 34px;
+  left: 0px;
+  top: 0px;
+  background-color: #FFFFFF;
+  border: transparent;
+  border-radius: 100px;
+}
+
+.search-form input {
   position: absolute;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 14px;
   font-weight: 400;
   display: flex;
-  text-align: center;
   margin-left: 16px;
   color: #000000;
+  border: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-form button {
+  width: 14px;
+  height: 14px;
 }
 
 .title {

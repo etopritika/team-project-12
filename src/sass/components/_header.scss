@@ -51,16 +51,34 @@ header {
     background-color: $red-clr;
 }
 
-form input {
+.search-form {
+    position: absolute; 
+    width: 252px; 
+    height: 34px; 
+    left: 0px; 
+    top: 0px;
+    background-color: $white-clr;
+    border: transparent;
+    border-radius: 100px;
+}
+
+.search-form input {
     position: absolute;
     font-family: $main-font;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 14px;
     font-weight: 400;
     display: flex;
-    text-align: center;
     margin-left: 16px;
     color: $black-clr;
+    border: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.search-form button {
+    width: 14px;
+    height: 14px; 
 }
 
 .title {
