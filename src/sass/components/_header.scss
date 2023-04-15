@@ -3,6 +3,45 @@ header {
     width: 100%;
 }
 
+.headermenu__list, .headermenu__buttons {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.headermenu__item, .headermenu__button {
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    padding: 10px 26px;
+    border: transparent;
+    border-radius: 100px;
+    gap: 10px;
+    outline: none;
+}
+
+.headermenu__item {
+    color: $black-clr;
+    background-color: $white-clr;
+}
+
+.headermenu__button {
+    color: $red-clr;
+    background-color: $white-clr;
+}
+
+.headermenu__current {
+    color: $white-clr;
+    background-color: $black-clr;
+}
+
+.headermenu__btncurrent {
+    color: $white-clr;
+    background-color: $red-clr;
+}
+
 .title {
     display: flex;
     align-items: center;
