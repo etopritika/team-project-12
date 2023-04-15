@@ -3,15 +3,63 @@ header {
     width: 100%;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: 768px) {
+        padding-bottom: 16px;
+        margin-left: 19.33px;
+        justify-content: flex-start;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-bottom: 32px;
+        margin-left: 36.92px;
+        justify-content: flex-start;
+    }
+}
+
+.title img {
+    max-width: 26.67px;
+    max-height: 26.67px;
+
+    @media screen and (min-width: 768px) {
+        max-width: 33.33px;
+        max-height: 33.33px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 49.17px;
+        max-height: 49.17px;
+    }
+}
+
 header p {
     font-family: $main-font;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 38px;
+    margin-left: 10.67px;
     
     display: flex;
     align-items: center;
     text-align: center;
     color: $white-clr;
+
+    @media screen and (min-width: 768px) {
+        font-size: 40px;
+        line-height: 47px;
+        margin-left: 11.33px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 64px;
+        line-height: 75px;
+        margin-left: 20.92px;
+    }
 }
