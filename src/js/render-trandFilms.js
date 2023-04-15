@@ -2,14 +2,17 @@ import ApiService from './api-service.js';
 import genres from '../data/genres';
 
 const apiService = new ApiService();
+
 const movieTrand = document.querySelector('.movie-cards');
 let movieParent = document.querySelector(".movie-cards");
 
 //Прослуховувач подій
 movieParent.onclick = (e) => {
   let currentCard = e.target.closest("li");
+  
   if(currentCard) {
-     console.log("Click");
+    apiService.movieId = currentCard.getAttribute("data-film-id");
+    //  console.log("Click");
      //Open modal here
   }
 }
@@ -30,7 +33,7 @@ function renderMovies(movies) {
   movieTrand.innerHTML = movies
     .map(
       movie => `
-        <li class="movie-card__item" data-filmId="${movie.id}">
+        <li class="movie-card__item" data-film-id="${movie.id}">
             <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
             <h2 class="movie-card__title">
               ${movie.title}
