@@ -71,7 +71,6 @@ function renderMovies(movies) {
     .map(
       movie => `
         <li class="movie-card__item">
-          <div class="movie-card__link">
             <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" />
             <h2 class="movie-card__title">
               ${movie.title}
@@ -85,9 +84,7 @@ function renderMovies(movies) {
               <a class="movie-card__link" href="https://www.themoviedb.org/movie/${movie.id}?language=en-US">
               ${movie.release_date.split('-')[0]}
               </a>
-            </p>
-          </div>
-          <div class="modal"></div>
+            </p>  
         </li>
       `
     )
