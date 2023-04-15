@@ -101,7 +101,7 @@ header {
 }
 
 .search-form {
-  position: absolute;
+  position: relative;
   width: 252px;
   height: 34px;
   left: 0px;
@@ -109,6 +109,18 @@ header {
   background-color: #FFFFFF;
   border: transparent;
   border-radius: 100px;
+}
+@media screen and (min-width: 768px) {
+  .search-form {
+    height: 38px;
+    width: 165px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .search-form {
+    height: 42px;
+    width: 187px;
+  }
 }
 
 .search-form input {
@@ -121,13 +133,42 @@ header {
   margin-left: 16px;
   color: #000000;
   border: transparent;
+  background-color: transparent;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+@media screen and (min-width: 768px) {
+  .search-form input {
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .search-form input {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+}
 
 .search-form button {
+  position: relative;
+  transform: translateX 80%;
+  top: 25%;
+  left: 88%;
   width: 14px;
   height: 14px;
+  border: transparent;
+  background-color: #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .search-form button {
+    width: 16px;
+    height: 16px;
+    top: 30%;
+    left: 82%;
+  }
 }
 
 .title {

@@ -52,7 +52,7 @@ header {
 }
 
 .search-form {
-    position: absolute; 
+    position: relative; 
     width: 252px; 
     height: 34px; 
     left: 0px; 
@@ -60,6 +60,16 @@ header {
     background-color: $white-clr;
     border: transparent;
     border-radius: 100px;
+
+    @media screen and (min-width: 768px) {
+        height: 38px;
+        width: 165px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        height: 42px;
+        width: 187px;
+    }
 }
 
 .search-form input {
@@ -72,13 +82,40 @@ header {
     margin-left: 16px;
     color: $black-clr;
     border: transparent;
+    background-color: transparent;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 14px;
+        line-height: 16px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+
 }
 
 .search-form button {
+    position: relative;
+    transform: translateX 80%;
+    top: 25%;
+    left: 88%;
     width: 14px;
-    height: 14px; 
+    height: 14px;
+    border: transparent;
+    background-color: $white-clr; 
+
+    @media screen and (min-width: 768px) {
+        width: 16px;
+        height: 16px;
+        top: 30%;
+        left: 82%;
+    }
 }
 
 .title {
