@@ -51,6 +51,18 @@ header {
     background-color: $red-clr;
 }
 
+form input {
+    position: absolute;
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    display: flex;
+    text-align: center;
+    margin-left: 16px;
+    color: $black-clr;
+}
+
 .title {
     display: flex;
     align-items: center;

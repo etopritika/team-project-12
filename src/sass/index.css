@@ -100,6 +100,18 @@ header {
   background-color: #B92F2C;
 }
 
+form input {
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  display: flex;
+  text-align: center;
+  margin-left: 16px;
+  color: #000000;
+}
+
 .title {
   display: flex;
   align-items: center;
