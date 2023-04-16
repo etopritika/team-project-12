@@ -1,5 +1,7 @@
 import ApiService from './api-service.js';
 const apiService = new ApiService();
+import { addWatchedMovieInLocalStorage } from './local-storage.js';
+import { addQueueMovieInLocalStorage } from './local-storage.js';
 
 const refs = {
     openModalBtn: document.querySelector('[data-action="open-modal"]'),
@@ -22,7 +24,10 @@ export function appendModalMarkup(movie) {
             <div>
              <h2 class="title">${movie.title}</h2>
              <ul>
-                 <li><span>Vote / Votes</span><span class="vote">${movie.vote_average} ${movie.vote_count}</span></li>
+                 <li><span class="modal-item"> Vote / Votes</span>
+                    <span class="vote_count"> ${movie.vote_count}</span></li>
+                    <span class="vote_average">${movie.vote_average}</span>
+                    <span class="modal-item"> / </span>
                  <li><span>Popularity</span><span class="popularity">${movie.popularity}</span></li>
                  <li><span>Original Title</span><span class="original-title">${movie.original_title}</span></li>
                  <li><span>Genre</span><span class="genres">${movie.genres}</span></li>
@@ -35,7 +40,13 @@ export function appendModalMarkup(movie) {
              </div>
              </div>`;
       
-          refs.modalConteiner.innerHTML = cardOfFilms;
-      }
+  refs.modalConteiner.innerHTML = cardOfFilms;
+  
+  const btnAddToWatched = document.querySelector('.add-watched');
+  const btnAddToQueue = document.querySelector('.add-queue');
+
+  btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
+  btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
+}
 
     
