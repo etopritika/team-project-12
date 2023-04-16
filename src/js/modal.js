@@ -22,7 +22,7 @@ export function appendModalMarkup(movie) {
     <div class="modal-info">
      <h2 class="title">${movie.title}</h2>
      <ul class="catalog">
-         <li class="modal-item-list"><span class="modal-item"> Vote / Votes</span><span  class="vote">${movie.vote_average}<span class="modal-item"> / </span> ${movie.vote_count}</span></li>
+         <li class="modal-item-list"><span class="modal-item"> Vote / Votes</span><span  class="vote_average">${movie.vote_average}<span class="modal-item"> / </span><span class="vote_count">${movie.vote_count}</span></li>
          <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="popularity">${movie.popularity}</span></li>
          <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="original-title">${movie.original_title}</span></li>
          <li class="modal-item-list"><span class="modal-item"> Genre</span><span class="genres">${movie.genres}</span></li>
