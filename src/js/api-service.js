@@ -70,10 +70,12 @@ export default class ApiService {
     this.searchQuery = newQuery;
   }
   
-  // get movieId() {
-  //   return this.movieId;
-  // }
-  // set movieId(newID) {
-  //   this.movieId = newID;
-  // }
+  get movieId() {
+    // console.log(this.movieId);
+    return this.movieId;
+  }
+  set movieId(newID) {
+    console.log(newID);
+    // this.movieId = newID;
+  }
 }
