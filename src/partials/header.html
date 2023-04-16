@@ -2,8 +2,12 @@
   <div class="container header">
     <nav class="headermenu">
       <ul class="headermenu__list">
-        <li><button type="button" class="headermenu__item headermenu__current home_button">Home</button></li>
-        <li><button type="button" class="headermenu__item library_button">My library</button></li>
+        <li><button type="button" class="headermenu__item headermenu__current home_button">
+          <a href="/src/index.html">Home</a>
+        </button></li>
+        <li><button type="button" class="headermenu__item library_button">
+          <a href="">My library</a>
+          </button></li>
       </ul>
       <form class="search-form" id="search-form">
         <input
@@ -19,11 +23,15 @@
           />
         </button>
       </form>
-      <ul class="headermenu__buttons library__buttons">
-        <li><button type="button" class="headermenu__button">Watched</button></li>
-        <li><button type="button" class="headermenu__button headermenu__btncurrent">Queue</button></li>
-      </ul>
     </nav>
+      <ul class="headermenu__buttons library__buttons">
+        <li><button type="button" class="headermenu__button">
+          <a href="">Watched</a>
+        </button></li>
+        <li><button type="button" class="headermenu__button headermenu__btncurrent">
+          <a href="">Queue</a>
+        </button></li>
+      </ul>
     <a><div class="title">
       <img
         src="/src/images/logo/lodo_desktop_2x.png"

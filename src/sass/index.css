@@ -46,17 +46,18 @@ body {
 }
 
 .container {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .header {
+  position: absolute;
   min-width: 280px;
   height: 460px;
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 14px;
+  margin-left: 14px;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -75,8 +76,8 @@ body {
 }
 
 nav {
-  padding-top: 14px;
   margin-left: 14px;
+  padding-top: 14px;
 }
 @media screen and (min-width: 768px) {
   nav {
@@ -91,22 +92,10 @@ nav {
   }
 }
 
-@media screen and (min-width: 320px) {
-  nav > ul {
-    align-content: space-between;
-  }
-}
-@media screen and (min-width: 768px) {
-  nav > ul {
-    justify-content: space-between;
-  }
-}
-
 .headermenu__list, .headermenu__buttons {
   display: flex;
   text-align: center;
   gap: 4px;
-  margin-bottom: 8px;
 }
 @media screen and (min-width: 1280px) {
   .headermenu__list, .headermenu__buttons {
@@ -116,10 +105,29 @@ nav {
 
 .headermenu__list {
   align-items: flex-start;
+  margin-bottom: 8px;
 }
 
 .headermenu__buttons {
-  align-items: flex-end;
+  position: relative;
+  top: 310px;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .headermenu__buttons {
+    position: relative;
+    justify-content: flex-end;
+    top: -90px;
+    left: -64px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .headermenu__buttons {
+    position: relative;
+    justify-content: flex-end;
+    top: -90px;
+    left: 14px;
+  }
 }
 
 .headermenu__item, .headermenu__button {
@@ -143,6 +151,10 @@ nav {
   .headermenu__item, .headermenu__button {
     padding: 14px 28px;
   }
+}
+
+.headermenu__item > a, .headermenu__button > a {
+  text-decoration: none;
 }
 
 .headermenu__item {
