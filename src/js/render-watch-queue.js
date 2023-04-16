@@ -18,7 +18,6 @@ function handleClickWatched() {
   }
 }
 
-
 function handleClickQueue() {
   
     getQueue = JSON.parse(localStorage.getItem('queue-movies'));
@@ -27,7 +26,8 @@ function handleClickQueue() {
         //повідомлення, що немає фільмів queue
     }
        
-  else {renderMovies(getQueue);
+    else {
+      renderMovies(getQueue);
     }
 }
 function renderMovies(movies) {
