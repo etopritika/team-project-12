@@ -17,7 +17,7 @@ export function appendModalMarkup(movie) {
     const cardOfFilms = `
             <button>close</button>
             <div>
-            <img  class="modal-img" src=${movie.poster_path} alt=${movie.title} />
+            <img  class="modal-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt=${movie.title} />
             </div>
             <div>
              <h2 class="title">${movie.title}</h2>
