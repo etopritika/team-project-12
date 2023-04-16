@@ -3,7 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 // добавлю пока такі стилі які є з пагінацією а коли уже буде видно шо як буду добавляти scss
 import ApiService from './api-service.js';
 import {renderMovies} from './render-trandFilms';
-console.log(renderMovies)
+// console.log(renderMovies)
 
 const apiService = new ApiService();
 
