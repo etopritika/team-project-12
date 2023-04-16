@@ -1,17 +1,19 @@
 import ApiService from './api-service.js';
 const apiService = new ApiService();
+import { addWatchedMovieInLocalStorage } from './local-storage.js';
+import { addQueueMovieInLocalStorage } from './local-storage.js';
 
 const refs = {
-    modalConteiner: document.querySelector('.modal'),
+  modalConteiner: document.querySelector('.modal'),
 };
 
 export function onOpenModal() {
-    document.body.classList.add('show-modal');
+  document.body.classList.add('show-modal');
 }
 
-export function appendModalMarkup(movie) { 
-    // console.log(movie);    
-    const cardOfFilms = `
+export function appendModalMarkup(movie) {
+  // console.log(movie);
+  const cardOfFilms = `
     <button>close</button>
     <div class="modal-card">            
     <div >
@@ -33,8 +35,11 @@ export function appendModalMarkup(movie) {
      </div>
      </div>
      </div>`;
-      
-          refs.modalConteiner.innerHTML = cardOfFilms;
-      }
 
-    
+  refs.modalConteiner.innerHTML = cardOfFilms;
+  const btnAddToWatched = document.querySelector('.add-watched');
+  const btnAddToQueue = document.querySelector('.add-queue');
+
+  btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
+  btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
+}
