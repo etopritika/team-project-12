@@ -52,6 +52,6 @@ export function paginationOn(){
     
 }
 
-paginationOn();
+// paginationOn();
 
 export{pagination};
