@@ -40,7 +40,7 @@ export function fetch(){
     .catch(error => console.log(error));
 }
 
-fetch();
+// fetch();
 
 export function paginationOn(){
     pagination.on('afterMove', event=>{

@@ -77,3 +77,8 @@ export default class ApiService {
     this.getMovieId = newID;
   }
 }
+
+// apiService.fetchArticles();//Повертає масив пошуку фільму
+// apiService.fetchTrending();//Повертає масив популярних фільмів
+// apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму
+// apiService.fetchTrailer();//Повертає інфо про трейлер

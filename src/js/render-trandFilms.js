@@ -2,20 +2,7 @@ import ApiService from './api-service.js';
 import genres from '../data/genres';
 
 const apiService = new ApiService();
-
 const movieTrand = document.querySelector('.movie-cards');
-
-
-//Прослуховувач подій
-movieTrand.onclick = (e) => {
-  let currentCard = e.target.closest("li");
-  
-  if(currentCard) {
-    apiService.movieId = currentCard.getAttribute("data-film-id");
-    //  console.log("Click");
-     //Open modal here
-  }
-}
 
 
 function getGenreId(genreId) {
@@ -29,7 +16,7 @@ function getGenreId(genreId) {
   }
 }
 
-export function renderMovies(movies) {
+export default function renderMovies(movies) {
   movieTrand.innerHTML = movies
     .map(
       movie => `

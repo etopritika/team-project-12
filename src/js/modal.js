@@ -8,14 +8,12 @@ const refs = {
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 
-function onOpenModal() {
+export function onOpenModal() {
     document.body.classList.add('show-modal');
-    
-    apiService.fetchDetails().then(appendModalMarkup).catch(error => console.log(error));
 }
 
-function appendModalMarkup(movie) { 
-    console.log(movie);    
+export function appendModalMarkup(movie) { 
+    // console.log(movie);    
     const cardOfFilms = `
             <button>close</button>
             <div>
