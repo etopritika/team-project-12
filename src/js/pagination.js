@@ -4,6 +4,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 import {fetchTrending} from './api-service';
 import {renderMovies} from './render-trandFilms';
 // отримання поточної сторінки
+
+
 function getCurrentPage(){
  
   const currentPage=document.querySelector('.site-nav__link--сurrent')
@@ -19,7 +21,7 @@ function getCurrentPage(){
 const container=document.getElementById('tui-pagination-container');
 
 const pagination= new Pagination(container, {
-    totalItems:0,
+    totalItems:10,
     itemsPerPage:20,
     visiblePages:5,
     page:1,
