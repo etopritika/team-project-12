@@ -15,6 +15,7 @@ refs.backdrop.addEventListener('click', onBackdropClick);
 export function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-modal');
+  
 }
 
 export function appendModalMarkup(movie) {
@@ -60,6 +61,7 @@ export function appendModalMarkup(movie) {
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-modal');
+  clearAppendModalMarkup();
 }
 
 function onBackdropClick(event) {
@@ -73,3 +75,8 @@ function onEscKeyPress(event) {
       onCloseModal();
   };
 }     
+
+function clearAppendModalMarkup() {
+  refs.modalConteiner.innerHTML = '';
+}
+
