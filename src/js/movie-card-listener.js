@@ -14,6 +14,6 @@ export default filmContainer.onclick = (e) => {
       apiService.movieId = currentCard.getAttribute("data-film-id");
       onOpenModal();
       apiService.fetchDetails().then(appendModalMarkup);
-      console.log(currentCard);
+    //   console.log(currentCard);
     }
   }
