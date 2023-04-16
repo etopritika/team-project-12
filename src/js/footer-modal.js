@@ -9,7 +9,7 @@
     refs.closeFooterTeamModalBtn.addEventListener("click", toggleModal);
   
     function toggleModal(event) {
-        event.preventDefault();
+      event.preventDefault();
       refs.footerTeamModal.classList.toggle("is-hidden");
     }
   })();
