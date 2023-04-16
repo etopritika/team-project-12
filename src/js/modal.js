@@ -6,7 +6,7 @@ const refs = {
     modalConteiner: document.querySelector('.modal'),
 };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
+
 
 export function onOpenModal() {
     document.body.classList.add('show-modal');
