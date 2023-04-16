@@ -8,7 +8,7 @@ export default class ApiService {
   constructor() {
     this.searchQuery = ''; //Що шукаємо
     this.page = 1; //Пагінація
-    this.movieId = ''; //Пошук по id
+    this.getMovieId = ''; //Пошук по id
   }
 
   fetchArticles() {
@@ -41,14 +41,14 @@ export default class ApiService {
 
   fetchDetails() {
     return fetch(`
-    ${BASE_URL}3/movie/${this.movieId}?api_key=${API_KEY}&language=en-US`)
+    ${BASE_URL}3/movie/${this.getMovieId}?api_key=${API_KEY}&language=en-US`)
     .then(response => response.json())
     .then(response => response);
   }
 
   fetchTrailer() {
     return fetch(`
-    ${BASE_URL}3/movie/${this.movieId}/videos?api_key=${API_KEY}&language=en-US`)
+    ${BASE_URL}3/movie/${this.getMovieId}/videos?api_key=${API_KEY}&language=en-US`)
     .then(response => response.json())
     .then(response => response);
   }
@@ -70,10 +70,15 @@ export default class ApiService {
     this.searchQuery = newQuery;
   }
   
-  // get movieId() {
-  //   return this.movieId;
-  // }
-  // set movieId(newID) {
-  //   this.movieId = newID;
-  // }
+  get movieId() {
+    return this.getMovieId;
+  }
+  set movieId(newID) {
+    this.getMovieId = newID;
+  }
 }
+
+// apiService.fetchArticles();//Повертає масив пошуку фільму
+// apiService.fetchTrending();//Повертає масив популярних фільмів
+// apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму
+// apiService.fetchTrailer();//Повертає інфо про трейлер
