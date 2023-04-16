@@ -4,49 +4,42 @@ import { addWatchedMovieInLocalStorage } from './local-storage.js';
 import { addQueueMovieInLocalStorage } from './local-storage.js';
 
 const refs = {
-    openModalBtn: document.querySelector('[data-action="open-modal"]'),
-    modalConteiner: document.querySelector('.modal'),
+  modalConteiner: document.querySelector('.modal'),
 };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
-
 export function onOpenModal() {
-    document.body.classList.add('show-modal');
+  document.body.classList.add('show-modal');
 }
 
-export function appendModalMarkup(movie) { 
-    // console.log(movie);    
-    const cardOfFilms = `
-            <button>close</button>
-            <div>
-            <img  class="modal-img" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt=${movie.title} />
-            </div>
-            <div>
-             <h2 class="title">${movie.title}</h2>
-             <ul>
-                 <li><span class="modal-item"> Vote / Votes</span>
-                    <span class="vote_count"> ${movie.vote_count}</span></li>
-                    <span class="vote_average">${movie.vote_average}</span>
-                    <span class="modal-item"> / </span>
-                 <li><span>Popularity</span><span class="popularity">${movie.popularity}</span></li>
-                 <li><span>Original Title</span><span class="original-title">${movie.original_title}</span></li>
-                 <li><span>Genre</span><span class="genres">${movie.genres}</span></li>
-             </ul>
-             <h3>About</h3>
-             <p class="overview">${movie.overview}</p>
-             <div>
-             <button class="add-watched">add to Watched</button>
-             <button class="add-queue">add to queue</button>
-             </div>
-             </div>`;
-      
+export function appendModalMarkup(movie) {
+  // console.log(movie);
+  const cardOfFilms = `
+    <button>close</button>
+    <div class="modal-card">            
+    <div >
+    <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />
+    </div>
+    <div class="modal-info">
+     <h2 class="title">${movie.title}</h2>
+     <ul class="catalog">
+         <li class="modal-item-list"><span class="modal-item"> Vote / Votes</span><span  class="vote">${movie.vote_average}<span class="modal-item"> / </span> ${movie.vote_count}</span></li>
+         <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="popularity">${movie.popularity}</span></li>
+         <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="original-title">${movie.original_title}</span></li>
+         <li class="modal-item-list"><span class="modal-item"> Genre</span><span class="genres">${movie.genres}</span></li>
+     </ul>
+     <h3 class="modal-about">ABOUT</h3>
+     <p class="overview">${movie.overview}</p>
+     <div class="modal-btn">
+     <button class="add-watched">ADD TO WATCHED</button>
+     <button class="add-queue">ADD TO QUEUE</button>
+     </div>
+     </div>
+     </div>`;
+
   refs.modalConteiner.innerHTML = cardOfFilms;
-  
   const btnAddToWatched = document.querySelector('.add-watched');
   const btnAddToQueue = document.querySelector('.add-queue');
 
   btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
   btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
 }
-
-    

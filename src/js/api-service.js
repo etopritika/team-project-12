@@ -18,12 +18,12 @@ export default class ApiService {
       .then(response => response.json())
       .then(response => response.results)
       .then(result => {
-        const langFilter = result.filter(({original_language}) => original_language === LANGUAGE);
-        if(langFilter.length === 0) {
+        
+        if(result.length === 0) {
           Notiflix.Notify.failure('Search result not successful. Enter the correct movie name.');
           return;
         }
-        return langFilter;
+        return result;
       })
   }
 
@@ -33,10 +33,7 @@ export default class ApiService {
     )
       .then(response => response.json())
       .then(response => response.results)
-      .then(result => {
-        const langFilter = result.filter(({original_language}) => original_language === LANGUAGE);
-        return langFilter;
-      })
+      
   }
 
   fetchDetails() {
