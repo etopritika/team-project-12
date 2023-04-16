@@ -1,8 +1,12 @@
 import  Pagination  from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css'; 
 // добавлю пока такі стилі які є з пагінацією а коли уже буде видно шо як буду добавляти scss
-import {fetchTrending} from './api-service';
+import ApiService from './api-service.js';
 import {renderMovies} from './render-trandFilms';
+console.log(renderMovies)
+
+const apiService = new ApiService();
+
 // отримання поточної сторінки
 function getCurrentPage(){
  
@@ -29,10 +33,11 @@ const pagination= new Pagination(container, {
 const page=pagination.getCurrentPage();
 
 export function fetch(){
-    fetchTrending(page).then(data=>{
+  apiService.fetchTrending(page).then(data=>{
         pagination.reset(data.results);
         renderMovies(data)
-    });
+    })
+    .catch(error => console.log(error));
 }
 
 fetch();
@@ -40,7 +45,7 @@ fetch();
 export function paginationOn(){
     pagination.on('afterMove', event=>{
       const currentPage=event.page;
-      fetchTrending(currentPage).then(data=>{
+      apiService.fetchTrending(currentPage).then(data=>{
         renderMovies(data);
       });
     });

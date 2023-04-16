@@ -4,10 +4,10 @@ import genres from '../data/genres';
 const apiService = new ApiService();
 
 const movieTrand = document.querySelector('.movie-cards');
-let movieParent = document.querySelector(".movie-cards");
+
 
 //Прослуховувач подій
-movieParent.onclick = (e) => {
+movieTrand.onclick = (e) => {
   let currentCard = e.target.closest("li");
   
   if(currentCard) {
@@ -29,7 +29,7 @@ function getGenreId(genreId) {
   }
 }
 
-function renderMovies(movies) {
+export function renderMovies(movies) {
   movieTrand.innerHTML = movies
     .map(
       movie => `
