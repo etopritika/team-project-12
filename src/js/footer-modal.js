@@ -8,7 +8,8 @@
     refs.openFooterTeamModalLink.addEventListener("click", toggleModal);
     refs.closeFooterTeamModalBtn.addEventListener("click", toggleModal);
   
-    function toggleModal() {
+    function toggleModal(event) {
+        event.preventDefault();
       refs.footerTeamModal.classList.toggle("is-hidden");
     }
   })();
