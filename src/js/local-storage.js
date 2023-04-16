@@ -83,11 +83,11 @@
 
 
 //============================== запись в локал сторидж массив объектов======================================================
-const btnLocalStorage = document.querySelector('.test-ls');
-const btnLocalStorage2 = document.querySelector('.test-ls2');
+// const btnLocalStorage = document.querySelector('.test-ls');
+// const btnLocalStorage2 = document.querySelector('.test-ls2');
 
-btnLocalStorage.addEventListener('click', addWatchedMovieInLocalStorage);
-btnLocalStorage2.addEventListener('click', addQueueMovieInLocalStorage);
+// btnLocalStorage.addEventListener('click', addWatchedMovieInLocalStorage);
+// btnLocalStorage2.addEventListener('click', addQueueMovieInLocalStorage);
 
 function addWatchedMovieInLocalStorage() {
   fetch(`
