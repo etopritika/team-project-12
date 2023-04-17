@@ -177,12 +177,12 @@ nav {
   background-color: #FFFFFF;
 }
 
-.headermenu__current {
+.headermenu__current, .is_active {
   color: #FFFFFF;
   background-color: #000000;
 }
 
-.headermenu__btncurrent {
+.headermenu__btncurrent, .is_active {
   color: #FFFFFF;
   background-color: #B92F2C;
 }
