@@ -23,7 +23,7 @@
   height: 40px;
   padding: 13px 13px 11px 13px;
   margin: 0;
-  color: #000000;
+  color: $black-clr;
   font-family: 500;
   font-size: 12px;
   font-weight: 500;
@@ -31,35 +31,38 @@
   text-decoration: none;
   border-radius: 5px;
   vertical-align: middle;
-
+  transition: background $tr-delay $tr-timing-function;
   @media screen and (max-width: 767px) {
     display: inline;
     padding: 10px 10px 10px 10px;
   }
 }
 
-.tui-pagination .tui-page-btn:hover {
-  background-color: #f4f4f4e0;
+ .tui-page-btn:hover {
+  background-color: $hover-red-color;
+  color: $white-clr;
+  transition: $tr-delay $tr-timing-function;
 }
 
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
-  color: white;
-  background: #B92F2C;
+  color: $background-color;
+  background: $red-clr;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.tui-pagination .tui-is-selected:hover {
-  background-color: #1e0fec;
+.tui-pagination .tui-is-selected:hover,
+.tui-pagination strong{
+  background: $red-clr;
 }
 
 .tui-pagination .tui-first,
 .tui-pagination .tui-prev,
 .tui-pagination .tui-next,
-.tui-pagination .tui-last,
-.tui-pagination .tui-prev-is-ellip,
-.tui-pagination .tui-next-is-ellip {
+.tui-pagination .tui-last
+ {
+  display: inline-block;
   width: 40px;
   height: 40px;
   padding: 13px 13px 11px 13px;
@@ -67,9 +70,8 @@
   line-height: 16px;
   white-space: nowrap;
   font-weight: bold;
-  background-color: #f7f7f7
+  background-color: $background-color;
 }
-
 
 .tui-pagination .tui-prev-is-ellip {
   border-right: 0;
@@ -82,7 +84,7 @@
 .tui-pagination .tui-first + .tui-prev,
 .tui-pagination .tui-next + .tui-last {
   border-left: 0;
-  background-color: #f7f7f7;
+  background-color: $background-color;
 }
 
 .tui-pagination .tui-ico-first,
@@ -119,7 +121,7 @@
 .tui-pagination .tui-ico-next {
   width: 8px;
   height: 12px;
-  color: white;
+  color: $background-color;
   background-position: -13px -24px;
 }
 
@@ -142,10 +144,10 @@
   }
 }
 
-.tui-pagination .tui-is-disabled:hover {
-  background: #f7f7f7;
-  cursor: pointer;
+.tui-pagination .tui-ico-ellip{
+  background-color: $background-color;
 }
+
 
 .tui-pagination .tui-is-disabled .tui-ico-prev {
   background-position: -26px -12px;
@@ -175,7 +177,7 @@
   padding: 8px 0 6px;
   font-size: 12px;
   text-align: center;
-  color: black;
+  color: $background-color;
   border: 0;
   outline: none;
 }
