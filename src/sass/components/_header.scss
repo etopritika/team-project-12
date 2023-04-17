@@ -66,14 +66,14 @@ nav {
         position: relative;
         justify-content: flex-end;
         top: -90px;
-        left: -64px;
+        left: 14px;
     }
 
     @media screen and (min-width: 1280px) {
         position: relative;
         justify-content: flex-end;
         top: -90px;
-        left: 14px;
+        left: -64px;
     }
 }
 
@@ -210,6 +210,7 @@ nav {
         padding-bottom: 32px;
         margin-left: 37px;
         justify-content: flex-start;
+        margin-top: 70px;
     }
 }
 
@@ -223,8 +224,8 @@ nav {
     }
 
     @media screen and (min-width: 1280px) {
-        max-width: 50px;
-        max-height: 50px;
+        width: 50px;
+        height: 50px;
     }
 }
 
