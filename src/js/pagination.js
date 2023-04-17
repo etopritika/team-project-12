@@ -13,7 +13,7 @@ const apiService = new ApiService();
 const container = document.getElementById('tui-pagination-container');
 
 const pagination = new Pagination(container, {
-  totalItems: 100,
+  totalItems: 1000,
   itemsPerPage: 20,
   visiblePages: 5,
   page: 1,
