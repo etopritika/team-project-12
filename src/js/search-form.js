@@ -2,6 +2,7 @@ import ApiService from './api-service';
 import genres from '../data/genres';
 const apiService = new ApiService();
 const movieTrand = document.querySelector('.movie-cards');
+const loader = document.querySelector('.loader');
 
 const form = document.querySelector('#search-form');
 form.addEventListener('submit', onSearch);
@@ -9,7 +10,11 @@ form.addEventListener('submit', onSearch);
 function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
-  apiService.fetchArticles().then(renderMovies);//Повертає масив пошуку фільму
+  loader.classList.remove('loader-hidden'); // показати спінер
+  apiService.fetchArticles().then(renderMovies)//Повертає масив пошуку фільму
+        .finally(() => {
+      loader.classList.add('loader-hidden'); // приховати спінер
+    });
 }
 
 
