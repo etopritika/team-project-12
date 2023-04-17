@@ -82,6 +82,7 @@ export default class ApiService {
   }
 }
 
+const apiService = new ApiService();
 // apiService.fetchArticles();//Повертає масив пошуку фільму
 // apiService.fetchTrending();//Повертає масив популярних фільмів
 // apiService.fetchDetails();//Повертає повну інформацію про фільм, потрібен id фільму

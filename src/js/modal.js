@@ -26,7 +26,7 @@ export function appendModalMarkup(movie) {
   <div >
   <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />
   </div>
-  <div class="modal-info">
+  <div class="modal-info" data-release-date="${movie.release_date}">
    <h2 class="title">${movie.title}</h2>
    <ul class="catalog">
        <li class="modal-item-list">
