@@ -121,12 +121,12 @@ nav {
     background-color: $white-clr;
 }
 
-.headermenu__current {
+.headermenu__current,  .is_active {
     color: $white-clr;
     background-color: $black-clr;
 }
 
-.headermenu__btncurrent {
+.headermenu__btncurrent, .is_active {
     color: $white-clr;
     background-color: $red-clr;
 }
