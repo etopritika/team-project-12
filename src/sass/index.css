@@ -63,15 +63,17 @@ body {
   .header {
     min-width: 704px;
     height: 222px;
-    background-image: url(/src/images/header/red_background_desktop_1x.jpg);
+    background-image: url(/src/images/header/red_background_tab_1x.jpg);
     border-radius: 15px;
-    background-size: contain;
+    background-size: cover;
   }
 }
 @media screen and (min-width: 1280px) {
   .header {
     min-width: 1216px;
     height: 316px;
+    background-image: url(/src/images/header/red_background_desktop_1x.jpg);
+    background-size: contain;
   }
 }
 
@@ -81,12 +83,15 @@ nav {
 }
 @media screen and (min-width: 768px) {
   nav {
+    display: flex;
+    gap: 4px;
     margin-left: 16px;
     padding-top: 16px;
   }
 }
 @media screen and (min-width: 1280px) {
   nav {
+    gap: 8px;
     margin-left: 32px;
     padding-top: 16px;
   }
@@ -107,6 +112,11 @@ nav {
   align-items: flex-start;
   margin-bottom: 8px;
 }
+@media screen and (min-width: 768px) {
+  .headermenu__list {
+    order: 2;
+  }
+}
 
 .headermenu__buttons {
   position: relative;
@@ -117,7 +127,7 @@ nav {
   .headermenu__buttons {
     position: relative;
     justify-content: flex-end;
-    top: -90px;
+    top: -45px;
     left: 14px;
   }
 }
@@ -125,7 +135,7 @@ nav {
   .headermenu__buttons {
     position: relative;
     justify-content: flex-end;
-    top: -90px;
+    top: -50px;
     left: -64px;
   }
 }
