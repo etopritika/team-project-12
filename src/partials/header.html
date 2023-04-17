@@ -1,10 +1,37 @@
 <header>
-  <form class="search-form" id="search-form">
-    <input
-      type="text"
-      name="query"
-      autocomplete="off"
-      placeholder="Movie search"
-    />
-  </form>
+  <div class="container header">
+    <nav class="headermenu">
+      <ul class="headermenu__list">
+        <li><button type="button" class="headermenu__item headermenu__current home_button">Home</button></li>
+        <li><button type="button" class="headermenu__item library_button">My library</button></li>
+      </ul>
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Movie search"
+        />
+        <button type="submit">
+          <img
+          srcset="/src/images/logo/searchicon_1x.png 1x, /src/images/logo/searchicon_2x.png 2x" 
+          src="/src/images/logo/searchicon_1x.png"
+          alt="search icon"
+          />
+        </button>
+      </form>
+    </nav>
+      <ul class="headermenu__buttons library__buttons">
+        <li><button type="button" class="headermenu__button">Watched</button></li>
+        <li><button type="button" class="headermenu__button headermenu__btncurrent">Queue</button></li>
+      </ul>
+    <a href="/src/index.html"><div class="title">
+      <img
+      src="/src/images/logo/lodo_desktop_2x.png"
+      alt="Logo Filmoteka"
+      />
+      <p class="title_text">Filmoteka</p>
+    </div>
+    </a>
+  </div>
 </header>
