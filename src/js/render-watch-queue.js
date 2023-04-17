@@ -3,21 +3,31 @@ function renderWatchedMovies() {
   const movieContainer = document.querySelector('.movie-cards');
   movieContainer.innerHTML = '';
 
-  parsedLocalStorageData.forEach( obj => {
-    const movie = renderMovie(obj);
-    movieContainer.appendChild(movie);
-  });
+  if (parsedLocalStorageData === `` || parsedLocalStorageData === null) {
+    console.log("У вас ще немає фільмів які ви дивились")
+  }
+  else {
+        parsedLocalStorageData.forEach(obj => {
+      const movie = renderMovie(obj);
+      movieContainer.appendChild(movie);
+    });
+  }
 }
-
 function renderQueueMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('queue-movies'));
   const movieContainer = document.querySelector('.movie-cards');
   movieContainer.innerHTML = '';
 
-  parsedLocalStorageData.forEach( obj => {
-    const movie = renderMovie(obj);
-    movieContainer.appendChild(movie);
-  });
+  if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
+    console.log("Ви не хочете дивитись ніякі фільми")
+  }
+  else {
+    
+    parsedLocalStorageData.forEach(obj => {
+      const movie = renderMovie(obj);
+      movieContainer.appendChild(movie);
+    });
+  }
 }
 
 function renderMovie(obj) {
@@ -35,8 +45,8 @@ function renderMovie(obj) {
   `
   return movie;
 }
-// const btnTest1 = document.querySelector('.test1');
-// btnTest1.addEventListener('click', renderWatchedMovies);
+const btnTest1 = document.querySelector('.test1');
+btnTest1.addEventListener('click', renderWatchedMovies);
 
-// const btnTest2 = document.querySelector('.test2');
-// btnTest2.addEventListener('click', renderQueueMovies);
+const btnTest2 = document.querySelector('.test2');
+btnTest2.addEventListener('click', renderQueueMovies);
