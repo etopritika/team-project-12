@@ -23,12 +23,11 @@ const pagination = new Pagination(container, {
 export function fetchMovies(page) {
   apiService.moviePage = page;
   apiService.fetchTrending().then(data => {
-    pagination.reset({
-      totalItems: data.total_results,
-      perPage: data.length,
-    });
-    console.log(data);
-    renderMovies(data);
+    // pagination.reset({
+    //   totalItems: data.total_results,
+    //   perPage: data.results.length,
+    // });
+    renderMovies(data.results);
   }).catch(error => console.log(error));
 }
 

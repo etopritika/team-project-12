@@ -45,7 +45,7 @@ export default function renderMovies(movies) {
 }
 
 apiService
-  .fetchTrending()
+  .fetchTrending().then(response => response.results)
   .then(renderMovies)
   .catch(error => console.log(error));
 
