@@ -5,3 +5,4 @@ import "./local-storage";
 import "./modal";
 import "./pagination";
 import "./movie-card-listener";
+import "./render-watch-queue";
