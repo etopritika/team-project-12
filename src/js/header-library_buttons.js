@@ -11,8 +11,8 @@ const divLibraryButtons = document.querySelector('.library__buttons')
 libraryButton.addEventListener('click', clickLibraryButton);
 
 // вікриття головної сторінки
-homeButton.addEventListener('click', showMainPage);
-logoArea.addEventListener('click', showMainPage);
+// homeButton.addEventListener('click', showMainPage);
+// logoArea.addEventListener('click', showMainPage);
 
 // функція для відкриття бібліотеки
 function clickLibraryButton(event) {

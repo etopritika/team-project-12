@@ -35,8 +35,8 @@ function renderMovie(obj) {
   `
   return movie;
 }
-const btnTest1 = document.querySelector('.test1');
-btnTest1.addEventListener('click', renderWatchedMovies);
+// const btnTest1 = document.querySelector('.test1');
+// btnTest1.addEventListener('click', renderWatchedMovies);
 
-const btnTest2 = document.querySelector('.test2');
-btnTest2.addEventListener('click', renderQueueMovies);
+// const btnTest2 = document.querySelector('.test2');
+// btnTest2.addEventListener('click', renderQueueMovies);
