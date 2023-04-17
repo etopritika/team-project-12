@@ -19,7 +19,7 @@
     // min-width: 704px;
     width: 704px;
     height: 222px;
-    padding: 16px;
+    padding: 16px 32px 32px 32px;
     background-image: url(/src/images/header/red_background_tab_1x.jpg);
     border-radius: 15px;
     background-size: cover;
@@ -47,8 +47,8 @@ nav {
 
   @media screen and (min-width: 1280px) {
     gap: 8px;
-    margin-left: 32px;
-    padding-top: 16px;
+    // margin-left: 32px;
+    // padding-top: 16px;
   }
 }
 
@@ -80,15 +80,17 @@ nav {
   @media screen and (min-width: 768px) {
     position: relative;
     justify-content: flex-end;
-    top: -45px;
-    left: 14px;
+    // top: -45px;
+    // left: 14px;
+    top: -50px;
   }
 
   @media screen and (min-width: 1280px) {
-    position: relative;
-    justify-content: flex-end;
-    top: -50px;
-    left: -64px;
+    // position: relative;
+    // justify-content: flex-end;
+    // top: -50px;
+    // left: -50px;
+    // margin-top: 16px;
   }
 }
 
@@ -207,33 +209,35 @@ nav {
   }
 }
 
-.title {
+.header-title {
+  //
+  justify-content: flex-start;
+  /* margin-top: 110px; */
+  /* margin-left: 37px; */
+  /* padding-bottom: 32px; */
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-bottom: 20px;
 
   @media screen and (max-width: 767px) {
-    margin-top: 220px;
+    // margin-top: 220px;
   }
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 16px;
-    margin-left: 19px;
-    margin-top: 50px;
-    justify-content: flex-start;
+    // padding-bottom: 16px;
+    // margin-left: 19px;
+    // margin-top: 50px;
+    // justify-content: flex-start;
   }
 
   @media screen and (min-width: 1280px) {
-    padding-bottom: 32px;
-    margin-left: 37px;
-    justify-content: flex-start;
-    margin-top: 110px;
+    // padding-bottom: 32px;
+    // margin-left: 37px;
+    // justify-content: flex-start;
+    // margin-top: 110px;
   }
 }
 
-.title img {
+.header-img {
   max-width: 28px;
   max-height: 28px;
 
