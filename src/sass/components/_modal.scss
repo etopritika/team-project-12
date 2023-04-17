@@ -33,16 +33,23 @@ body.show-modal .backdrop {
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    
+   
+
+    @media screen and (min-width: 1280px) {
     min-width: 806px;
+    height: 558px;
     padding: 40px 12px;
+   }
 }
 
 .modal-card {
     display: flex;  
 }
 
-.modal-img { @media screen and (min-width: 1280px) {
-        width: 375px;  
+.modal-img { 
+    border-radius: 5px;
+    @media screen and (min-width: 1280px) {
         height: 478px;
         margin-right: 16px;
    }
@@ -56,10 +63,11 @@ body.show-modal .backdrop {
 
 .modal-item {
     color: rgba(140, 140, 140, 1);
-    margin-right: 20px;
-}
+    width: 150px;
+   }
 
 .title {
+    font-style: medium;
     font-size: 30px; 
     line-height: 1.17;
     margin-bottom: 20px;
@@ -72,14 +80,23 @@ body.show-modal .backdrop {
 
 .catalog {
     margin-bottom: 20px;
+    line-height: 1.33;
 }
 
+// .vote_average, .vote_count, .popularity {
+//     line-height: 1.17;
+// }
 .modal-about {
     margin-bottom: 8px;
+    line-height: 1.33;
+    font-weight: 500;
+    font-size: 12px;
 }
 
 .overview {
     margin-bottom: 20px;
+    line-height: 1.67; 
+    width: 391px;
 }
 
 .modal-btn {
@@ -92,10 +109,39 @@ body.show-modal .backdrop {
     margin-right: 8px;
     background-color: rgba(185, 47, 44, 1);
     color: rgba(255, 255, 255, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    line-height: 1.17;
+    cursor: pointer;
+    border-radius: 100px;
+    border: none;
+    gap: 10px;
+        
 }
+.add-watched:hover{
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(185, 47, 44, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+    
 
 .add-queue {
     min-width: 134px;
-    
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(185, 47, 44, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    font-family: inherit;
+    line-height: 1.17;
+    cursor: pointer;
+    border-radius: 100px;
+    gap: 10px;
 }
 
+.add-queue:hover{
+    background-color: rgba(185, 47, 44, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
