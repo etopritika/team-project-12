@@ -54,6 +54,12 @@
     position: absolute;
     margin-left: -7px;
   }
+  &__item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: $tr-delay;
+  }
 }
 
 @media screen and (max-width: 767px) {
