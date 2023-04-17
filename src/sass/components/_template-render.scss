@@ -1,6 +1,75 @@
+.movie-card {
+  &__image {
+    margin-bottom: 10px;
+    border-radius: 5px;
 
-.trand-films {
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 8px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__title {
+    // font-family: $main-font;
+    // font-style: normal;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    text-transform: uppercase;
+
+    color: $black-clr;
+
+    cursor: pointer;
+  }
+
+  &__info {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+    // font-family: $main-font;
+    // font-style: normal;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: $red-clr;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__release-date {
+    margin-left: 10px;
+    position: relative;
+  }
+
+  &__release-date::before {
+    content: '|';
+    position: absolute;
+    margin-left: -7px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movie-card__image {
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .movie-card__image {
+    width: 336px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movie-card__image {
+    width: 395px;
+  }
 }

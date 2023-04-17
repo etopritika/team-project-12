@@ -1,75 +1,6 @@
-.footer {
-    // position: absolute;
-    // width: 320px;
-    // height: 100px;
-    // left: 0px;
-    // right: 0px;
-    // top: 2443px;
-    // margin-top: auto;
-
-    background: #F7F7F7;
-
-    // @media screen and (min-width: 768px) {
-    //     // width: 768px;
-    //     height: 79px;
-    //     // top: 2522px;
-    //     margin-top: auto;
-    // }
-
-    // @media screen and (min-width: 1280px) {
-    //     // width: 1280px;
-    //     height: 77px;
-    //     // top: 2506px;
-    //     margin-top: auto;
-    // }
-
-}
-
-.footer-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    padding-top: 28px;
-    padding-bottom: 28px;
-    text-align: center;
-
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.14;
-
-    color: #545454;
-
-    @media screen and (min-width: 768px) {
-        font-size: 16px;
-        line-height: 1.19;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    @media screen and (min-width: 1280px) {
-        padding-top: 29px;
-        padding-bottom: 29px;
-    }
-
-    &__item:first-child {
-        margin-bottom: 12px;
-
-        @media screen and (min-width: 768px) {
-            margin-bottom: 0px;
-        }
-    }
-
-}
-
-
-.link-underline {
-    text-decoration: underline;
-    color: #545454;
-}
-
 //MODAL-TEAM
 
-.backdrop {
+.backdrop-team {
     position: fixed;
     top: 0;
     left: 0;
@@ -85,7 +16,7 @@
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
       
         
-    &.is-hidden {
+    &.is-hidden-backdrop-team {
         opacity: 0;
         pointer-events: none;
     }
@@ -124,7 +55,7 @@
     }
 }
 
-.modal-button {
+.modal-team-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -135,18 +66,22 @@
     margin-right: 8px;
         
     background-color: #ffffff;
+    border: solid 0px #ffffff;
+    border-radius: 50%;
     cursor: pointer;
     width: 30px;
     height: 30px;
         
         
-    // // MODAL BUTTON  FOCUS, HOVER
-    // &:hover,
-    // &:focus {
-    //     fill: red;
+    // MODAL BUTTON  FOCUS, HOVER
+    &:hover,
+    &:focus {
+        // fill: red;
+        // box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        box-shadow: 0 0 7px #B92F2C;
         
-    //     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    // }
+        // transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 .team-title {
