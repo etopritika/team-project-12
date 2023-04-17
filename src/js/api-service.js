@@ -73,6 +73,13 @@ export default class ApiService {
   set movieId(newID) {
     this.getMovieId = newID;
   }
+  get moviePage() {
+    return this.page;
+  }
+
+  set moviePage(newPage) {
+    this.page = newPage;
+  }
 }
 
 // apiService.fetchArticles();//Повертає масив пошуку фільму
