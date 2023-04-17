@@ -26,6 +26,7 @@ body.show-modal .backdrop {
 }
 
 .modal {
+    position: relative;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color:rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -83,9 +84,24 @@ body.show-modal .backdrop {
     line-height: 1.33;
 }
 
+.vote_average{
+    background-color: rgba(185, 47, 44, 1);
+    padding: 1px 10px 0px 10px;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    margin-right: 2px;
+}
+
+.vote_count{
+    margin-left: 7px;
+}
 // .vote_average, .vote_count, .popularity {
 //     line-height: 1.17;
 // }
+.original-title {
+    text-transform: uppercase;
+}
+
 .modal-about {
     margin-bottom: 8px;
     line-height: 1.33;
@@ -145,3 +161,17 @@ body.show-modal .backdrop {
     border: none;
     box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+.close-modal{
+    position: absolute;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    top: 8px;
+    right: 8px;;
+    width: 30px;
+   height: 30px;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 50%;
+   cursor: pointer;
+   background: transparent;
+    fill: #000000;}
+.close-modal:hover{fill:var(--accent-color)}

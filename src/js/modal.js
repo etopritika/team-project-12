@@ -31,11 +31,11 @@ export function appendModalMarkup(movie) {
    <ul class="catalog">
        <li class="modal-item-list">
            <span class="modal-item"> Vote / Votes</span>
-           <span class="vote_average">${movie.vote_average}</span>
-           <span class="modal-item"> / </span>
+           <span class="vote_average">${movie.vote_average.toFixed(1)}</span>
+           <span > / </span>
            <span class="vote_count"> ${movie.vote_count}</span>
        </li>
-       <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="popularity">${movie.popularity}</span></li>
+       <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="popularity">${movie.popularity.toFixed(1)}</span></li>
        <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="original-title">${movie.original_title}</span></li>
        <li class="modal-item-list"><span class="modal-item"> Genre</span>
        ${movie.genres.map( genre => `<span class="genres"> ${genre.name} </span>`)}
