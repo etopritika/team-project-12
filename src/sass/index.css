@@ -60,7 +60,6 @@ header {
   padding: 14px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
@@ -119,6 +118,15 @@ header {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .headermenu__buttons {
+    order: 3;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+}
 @media screen and (min-width: 768px) {
   .headermenu__buttons {
     margin-left: auto;
@@ -257,9 +265,22 @@ header {
 }
 
 .header__title {
-  justify-content: flex-start;
   display: flex;
   align-items: center;
+  margin-right: auto;
+  margin-top: auto;
+}
+@media screen and (max-width: 767px) {
+  .header__title {
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__title {
+    margin-top: auto;
+    justify-content: flex-start;
+    margin-right: auto;
+  }
 }
 .header__img {
   max-width: 28px;
