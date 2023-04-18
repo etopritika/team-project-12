@@ -14,7 +14,7 @@ export default class ApiService {
 
   fetchArticles() {
     return fetch(
-      `${BASE_URL}3/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&page=${this.page}&language=en-US&include_adult=true`
+      `${BASE_URL}3/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&page=${this.page}&language=en-US&include_adult=false`
     )
       .then(response => response.json())
       .then(response => response.results)
