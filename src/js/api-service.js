@@ -18,9 +18,10 @@ export default class ApiService {
     )
       .then(response => response.json())
       .then(response => response.results)
-      .then(result => {
-        const havePoster = result.filter(result => result.poster_path !== POSTER);
-        console.log(havePoster);
+      .then(results => {
+        const havePoster = results.filter(result => result.poster_path !== POSTER);
+        // const langFilter = havePoster.filter(result => result.original_language === LANGUAGE);
+        // console.log(results);
         if(havePoster.length === 0) {
           Notiflix.Notify.failure('Search result not successful. Enter the correct movie name.');
           return;

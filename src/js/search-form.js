@@ -15,6 +15,8 @@ function onSearch(e) {
         .finally(() => {
       loader.classList.add('loader-hidden'); // приховати спінер
     });
+  // const clearPagination = document.querySelector(".tui-pagination");
+  // clearPagination.style.display = "none";
 }
 
 
