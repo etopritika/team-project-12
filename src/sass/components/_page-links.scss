@@ -31,7 +31,7 @@
   text-decoration: none;
   border-radius: 5px;
   vertical-align: middle;
-  transition: background $tr-delay $tr-timing-function;
+  transition: background-color $tr-delay $tr-timing-function;
   @media screen and (max-width: 767px) {
     display: inline;
     padding: 10px 10px 10px 10px;
@@ -39,8 +39,7 @@
 }
 
  .tui-page-btn:hover {
-  background-color: $hover-red-color;
-  color: $white-clr;
+  background-color: $background-color;
   transition: $tr-delay $tr-timing-function;
 }
 

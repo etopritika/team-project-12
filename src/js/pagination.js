@@ -3,7 +3,7 @@ import  Pagination  from 'tui-pagination';
 // добавлю пока такі стилі які є з пагінацією а коли уже буде видно шо як буду добавляти scss
 import ApiService from './api-service.js';
 import renderMovies from './render-trandFilms';
-// console.log(renderMovies);
+import onSearch from "./search-form.js";
 
 const apiService = new ApiService();
 
@@ -13,7 +13,7 @@ const apiService = new ApiService();
 const container = document.getElementById('tui-pagination-container');
 
 const pagination = new Pagination(container, {
-  totalItems: 100,
+  totalItems: 1000,
   itemsPerPage: 20,
   visiblePages: 5,
   page: 1,
@@ -21,12 +21,9 @@ const pagination = new Pagination(container, {
 });
 
 export function fetchMovies(page) {
-  apiService.fetchTrending(page).then(data => {
-    pagination.reset({
-      totalItems: data.total_results,
-      perPage: data.results.length,
-    });
-    renderMovies(data);
+  apiService.moviePage = page;
+  apiService.fetchTrending().then(data => {
+    renderMovies(data.results);
   }).catch(error => console.log(error));
 }
 
@@ -35,4 +32,4 @@ pagination.on('afterMove', event => {
   fetchMovies(currentPage);
 });
 
-fetchMovies(1);
+// fetchMovies(1);

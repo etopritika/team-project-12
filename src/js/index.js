@@ -5,3 +5,6 @@ import "./local-storage";
 import "./modal";
 import "./pagination";
 import "./movie-card-listener";
+import "./render-watch-queue";
+import "./button-up";
+import "./header-library_buttons";
