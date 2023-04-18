@@ -68,9 +68,9 @@ function renderMovie(movies) {
     )
     .join('');
 }
-// const btnTest1 = document.querySelector('.btn-watched');
-// btnTest1.addEventListener('click', renderWatchedMovies);
+const btnWatched = document.querySelector('.btn-watched');
+btnWatched.addEventListener('click', renderWatchedMovies);
 
-// const btnTest2 = document.querySelector('.btn-queue');
-// btnTest2.addEventListener('click', renderQueueMovies);
+const btnQueue = document.querySelector('.btn-queue');
+btnQueue.addEventListener('click', renderQueueMovies);
 
