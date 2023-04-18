@@ -7,6 +7,12 @@ const loader = document.querySelector('.loader');
 const form = document.querySelector('#search-form');
 form.addEventListener('submit', onSearch);
 
+pagination.on('afterMove', event => {
+  const currentPage = event.page;
+  apiService.moviePage = currentPage;
+  onSearch();
+});
+
 export function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
@@ -17,7 +23,6 @@ export function onSearch(e) {
     });
   // const clearPagination = document.querySelector(".tui-pagination");
   // clearPagination.style.display = "none";
-  apiService.moviePage = page;
 }
 
 
