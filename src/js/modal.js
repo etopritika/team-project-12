@@ -19,11 +19,9 @@ export function onOpenModal() {
 }
 
 export function appendModalMarkup(movie) {
-  // console.log(movie);
+  console.log(movie);
   const cardOfFilms = `
-
-   <div class="modal-card" data-film-id="${movie.id}">
-   <div class="modal-card">            
+   <div class="modal-card" data-film-id="${movie.id}">            
   <div >
   <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />
   </div>

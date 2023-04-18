@@ -10,13 +10,10 @@ export function addWatchedMovieInLocalStorage() {
   let genres = document.querySelectorAll('.genres');
   const overview = document.querySelector('.overview').textContent;
   const title = document.querySelector('.title').textContent;
-  let genresStr = '';
+  let genresArr = [];
 
   for (let i = 0; i < genres.length; i+=1) {
-    genresStr += genres[i].textContent;
-    if (i !== genres.length - 1) {
-      genresStr += ', '
-    }
+    genresArr.push(genres[i].textContent);
   }
 
   const movieDetails = {
@@ -27,7 +24,7 @@ export function addWatchedMovieInLocalStorage() {
     vote_count,
     popularity,
     original_title,
-    genres: genresStr, 
+    genres: genresArr, 
     overview
   }
 
@@ -58,13 +55,10 @@ export function addQueueMovieInLocalStorage() {
   const genres = document.querySelectorAll('.genres');
   const overview = document.querySelector('.overview').textContent;
   const title = document.querySelector('.title').textContent;
-  let genresStr = '';
-
+  let genresArr = '';
+  
   for (let i = 0; i < genres.length; i+=1) {
-    genresStr += genres[i].textContent;
-    if (i !== genres.length - 1) {
-      genresStr += ', '
-    }
+    genresArr.push(genres[i].textContent);
   }
 
   const movieDetails = {
@@ -75,7 +69,7 @@ export function addQueueMovieInLocalStorage() {
     vote_count,
     popularity,
     original_title,
-    genres: genresStr, 
+    genres: genresArr, 
     overview
   }
 
