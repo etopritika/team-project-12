@@ -9,6 +9,11 @@ const divLibraryButtons = document.querySelector('.library__buttons')
 
 // відкриття бібліотеки
 libraryButton.addEventListener('click', clickLibraryButton);
+libraryButton.onclick=function(){
+  document.getElementById('tui-pagination-container').hidden=true
+}
+buttomLibW.addEventListener('click', clickLibAdd);
+buttomLibQ.addEventListener('click', clickLibRem);
 
 // вікриття головної сторінки
 homeButton.addEventListener('click', showMainPage);
