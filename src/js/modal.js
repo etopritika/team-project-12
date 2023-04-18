@@ -21,31 +21,36 @@ export function onOpenModal() {
 export function appendModalMarkup(movie) {
   // console.log(movie);
   const cardOfFilms = `
+<<<<<<< Updated upstream
   
+=======
+
+   <div class="modal-card" data-film-id="${movie.id}">
+>>>>>>> Stashed changes
    <div class="modal-card">            
   <div >
   <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />
   </div>
   <div class="modal-info" data-release-date="${movie.release_date}">
-   <h2 class="title">${movie.title}</h2>
-   <ul class="catalog">
+   <h2 class="modal-title">${movie.title}</h2>
+   <ul class="modal-catalog">
        <li class="modal-item-list">
            <span class="modal-item"> Vote / Votes</span>
-           <span class="vote_average">${movie.vote_average.toFixed(1)}</span>
+           <span class="modal-vote_average">${movie.vote_average.toFixed(1)}</span>
            <span > / </span>
-           <span class="vote_count"> ${movie.vote_count}</span>
+           <span class="modal-vote_count"> ${movie.vote_count}</span>
        </li>
-       <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="popularity">${movie.popularity.toFixed(1)}</span></li>
-       <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="original-title">${movie.original_title}</span></li>
+       <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="modal-popularity">${movie.popularity.toFixed(1)}</span></li>
+       <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="modal-original-title">${movie.original_title}</span></li>
        <li class="modal-item-list"><span class="modal-item"> Genre</span>
        ${movie.genres.map( genre => `<span class="genres"> ${genre.name} </span>`)}
            </li>
    </ul>
    <h3 class="modal-about">ABOUT</h3>
-   <p class="overview">${movie.overview}</p>
+   <p class="modal-overview">${movie.overview}</p>
    <div class="modal-btn">
-   <button class="add-watched">ADD TO WATCHED</button>
-   <button class="add-queue">ADD TO QUEUE</button>
+   <button class="modal-add-watched">ADD TO WATCHED</button>
+   <button class="modal-add-queue">ADD TO QUEUE</button>
    </div>
    </div>
    </div>`;
