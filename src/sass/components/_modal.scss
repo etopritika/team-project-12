@@ -50,19 +50,16 @@ body.show-modal .modal-backdrop {
     
  @media screen and (min-width: 1280px) {
     min-width: 806px;
-    height: 558px;
     padding: 40px 12px;
    }
 
-   @media screen and (min-width: 768px) {
+   @media screen and (min-width: 768px) and (max-width: 1279px) {
     min-width: 704px;
-    height: 552px;
     padding: 40px 36px;
    }
 
    @media screen and (min-width: 320px) and (max-width: 767px) {
     min-width: 280px;
-    height: 930px;
     padding: 40px 20px;
 }
 
@@ -70,13 +67,15 @@ body.show-modal .modal-backdrop {
 
 .modal-card {   
 
+@media screen and (min-width: 768px) {
+display: flex; 
+}
+
 @media screen and (min-width: 320px)and (max-width: 767px) {
  display: block;
     }
 
-@media screen and (min-width: 768px) {
-display: flex; 
-} 
+ 
 }
 
 .modal-img { 
@@ -87,7 +86,7 @@ display: flex;
     margin-right: 16px;
    }
 
-   @media screen and (min-width: 768px) {
+   @media screen and (min-width: 768px) and (max-width: 1279px) {
     height: 373px;
     margin-right: 68px;
    }
@@ -102,6 +101,18 @@ display: flex;
     font-weight: 500;
     font-size: 12px;
     color: rgba(0, 0, 0, 1);
+
+    @media screen and (min-width: 1280px) {
+        width: 391px;
+     }
+    
+     @media screen and (min-width: 768px) and (max-width: 1279px) {
+        width: 264px;
+    }
+
+    @media screen and (min-width: 320px)and (max-width: 767px) {
+        width: 240px;
+    }
 }
 
 .modal-item {
@@ -137,6 +148,10 @@ display: flex;
     margin-bottom: 8px;
     display: flex;
 }
+.modal-item-list:last-child{
+    margin-bottom: 0px;
+}
+
 
 .modal-catalog {
     margin-bottom: 20px;
@@ -171,18 +186,7 @@ display: flex;
 .modal-overview {
     margin-bottom: 20px;
     line-height: 1.67; 
-    
-    @media screen and (min-width: 1280px) {
-        width: 391px;
-     }
-    
-     @media screen and (min-width: 768px) {
-        width: 264px;
-    }
 
-    @media screen and (min-width: 320px)and (max-width: 767px) {
-        width: 240px;
-    }
 }
 
 .modal-btn {
@@ -192,7 +196,7 @@ display: flex;
     height: 42px;
 }
     
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
     height: 38px;
 }
 
@@ -214,9 +218,10 @@ display: flex;
   
     @media screen and (min-width: 1280px) {
         min-width: 165px;
+        margin-right: 8px;
     }
         
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
         min-width: 137px;
         margin-right: 8px;
     }   
@@ -249,7 +254,7 @@ display: flex;
         min-width: 134px;
     }
         
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
         min-width: 119px;
     } 
 
