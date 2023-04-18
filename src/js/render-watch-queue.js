@@ -12,7 +12,7 @@ function renderWatchedMovies() {
   }
   else {
     renderMovie(parsedLocalStorageData);
-    console.log(parsedLocalStorageData);
+    // console.log(parsedLocalStorageData);
     //     parsedLocalStorageData.forEach(obj => {
     //       console.log(obj);
     //   const movie = renderMovie(obj);
@@ -30,7 +30,7 @@ function renderQueueMovies() {
   }
   else {
     renderMovie(parsedLocalStorageData);
-    console.log(parsedLocalStorageData);
+    // console.log(parsedLocalStorageData);
     // parsedLocalStorageData.forEach(obj => {
     //   const movie = renderMovie(obj);
     //   movieContainer.appendChild(movie);
