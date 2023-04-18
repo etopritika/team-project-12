@@ -1,10 +1,13 @@
+import Notiflix from 'notiflix';
 const movieTrand = document.querySelector('.movie-cards');
 
 function renderMyLibrary() {
   const parsedWatched = JSON.parse(localStorage.getItem('watched-movies')) || [];
   const parsedQueue = JSON.parse(localStorage.getItem('queue-movies')) || [];
   const allParsedMovies = parsedWatched.concat(parsedQueue);
-
+  if(allParsedMovies.length === 0) {
+    Notiflix.Notify.info('Your films library is empty');
+  }
   const movieContainer = document.querySelector('.movie-cards');
   movieContainer.innerHTML = '';
   

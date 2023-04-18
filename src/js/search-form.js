@@ -43,7 +43,8 @@ function getGenreId(genreId) {
 }
 
 function renderMovies(movies) {
-  movieTrand.innerHTML = movies
+  try {
+    movieTrand.innerHTML = movies
     .map(
       movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">
@@ -77,4 +78,7 @@ function renderMovies(movies) {
       `
     )
     .join('');
+  } catch (error) {
+    
+  }
 }
