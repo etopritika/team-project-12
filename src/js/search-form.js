@@ -7,7 +7,7 @@ const loader = document.querySelector('.loader');
 const form = document.querySelector('#search-form');
 form.addEventListener('submit', onSearch);
 
-function onSearch(e) {
+export function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
   loader.classList.remove('loader-hidden'); // показати спінер
@@ -17,6 +17,7 @@ function onSearch(e) {
     });
   // const clearPagination = document.querySelector(".tui-pagination");
   // clearPagination.style.display = "none";
+  apiService.moviePage = page;
 }
 
 
