@@ -4,7 +4,7 @@ import { addWatchedMovieInLocalStorage } from './local-storage.js';
 import { addQueueMovieInLocalStorage } from './local-storage.js';
 
 const refs = {
-  modalConteiner: document.querySelector('.modal'),
+  modalConteiner: document.querySelector('.modal-conteiner'),
   closeModalBtn: document.querySelector('.close-modal'),
   backdrop: document.querySelector('.js-backdrop'),
 };
@@ -21,12 +21,8 @@ export function onOpenModal() {
 export function appendModalMarkup(movie) {
   // console.log(movie);
   const cardOfFilms = `
-<<<<<<< Updated upstream
-  
-=======
 
    <div class="modal-card" data-film-id="${movie.id}">
->>>>>>> Stashed changes
    <div class="modal-card">            
   <div >
   <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />

@@ -1,11 +1,11 @@
-body.show-modal .backdrop {
+body.show-modal .modal-backdrop {
     opacity: 4;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     visibility: visible;
     pointer-events: initial;
 }
 
-.backdrop {
+.modal-backdrop {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@ display: flex;
     
    }
 
-.title {
+.modal-title {
     font-weight: 500;
     text-transform: uppercase;
     
@@ -138,12 +138,12 @@ display: flex;
     display: flex;
 }
 
-.catalog {
+.modal-catalog {
     margin-bottom: 20px;
     line-height: 1.33;
 }
 
-.vote_average{
+.modal-vote_average{
     background-color: rgba(185, 47, 44, 1);
     padding: 1px 10px 0px 10px;
     color: rgba(255, 255, 255, 1);
@@ -151,13 +151,13 @@ display: flex;
     margin-right: 2px;
 }
 
-.vote_count{
+.modal-vote_count{
     margin-left: 7px;
 }
 // .vote_average, .vote_count, .popularity {
 //     line-height: 1.17;
 // }
-.original-title {
+.modal-original-title {
     text-transform: uppercase;
 }
 
@@ -168,7 +168,7 @@ display: flex;
     font-size: 12px;
 }
 
-.overview {
+.modal-overview {
     margin-bottom: 20px;
     line-height: 1.67; 
     
@@ -202,7 +202,7 @@ display: flex;
     
 }
 
-.add-watched {
+.modal-add-watched {
     background-color: rgba(185, 47, 44, 1);
     color: rgba(255, 255, 255, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -227,7 +227,7 @@ display: flex;
     }
         
 }
-.add-watched:hover{
+.modal-add-watched:hover{
     background-color: rgba(255, 255, 255, 1);
     color: rgba(185, 47, 44, 1);
     border: 1px solid rgba(0, 0, 0, 1);
@@ -235,7 +235,7 @@ display: flex;
 }
     
 
-.add-queue {
+.modal-add-queue {
     background-color: rgba(255, 255, 255, 1);
     color: rgba(185, 47, 44, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -258,7 +258,7 @@ display: flex;
     }
 }
 
-.add-queue:hover{
+.modal-add-queue:hover{
     background-color: rgba(185, 47, 44, 1);
     color: rgba(255, 255, 255, 1);
     border: none;
@@ -266,8 +266,8 @@ display: flex;
 }
 
 .close-modal{
-    position: absolute;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ position: absolute;
+ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     top: 8px;
     right: 8px;;
     width: 30px;
