@@ -58,6 +58,9 @@ header {
   width: 280px;
   height: 460px;
   padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
@@ -116,6 +119,11 @@ header {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .headermenu__buttons {
+    margin-left: auto;
+  }
+}
 .headermenu__item,
 .headermenu__button {
   font-family: "Roboto", sans-serif;
