@@ -19,7 +19,7 @@ export function onOpenModal() {
 }
 
 export function appendModalMarkup(movie) {
-  // console.log(movie)
+  console.log(movie)
   const cardOfFilms = `
 
    <div class="modal-card" data-film-id="${movie.id}">
@@ -37,10 +37,16 @@ export function appendModalMarkup(movie) {
            <span class="modal-vote_count"> ${movie.vote_count}</span>
        </li>
        <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="modal-popularity">${movie.popularity.toFixed(1)}</span></li>
-       <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="modal-original-title">${movie.original_title}</span></li>
-       <li class="modal-item-list"><span class="modal-item"> Genre</span>
-       ${movie.genres.map( genre => `<span class="genres"> ${genre.name} </span>`)}
-           </li>
+       <li class="modal-item-list">
+          <span class="modal-item"> Original Title</span>
+          <div class="modal-original-title">
+          <span >${movie.original_title}</span>
+          </div>
+        </li>
+       <li class="modal-item-list">
+          <div class="modal-item"> <span > Genre</span></div>
+          <div class="genres"> ${movie.genres.map( genre => `<span > ${genre.name} </span>`).join(',&nbsp')}</div>
+        </li>
    </ul>
    <h3 class="modal-about">ABOUT</h3>
    <p class="modal-overview">${movie.overview}</p>
