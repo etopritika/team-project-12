@@ -45,24 +45,28 @@ body {
   }
 }
 
-.container {
-  padding-left: 0;
+header {
+  margin: 20px 0;
+}
+@media screen and (min-width: 768px) {
+  header {
+    margin: 32px 0;
+  }
 }
 
 .header {
-  position: absolute;
-  min-width: 280px;
+  width: 280px;
   height: 460px;
+  padding: 14px;
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
-  margin-top: 14px;
-  margin-left: 14px;
 }
 @media screen and (min-width: 768px) {
   .header {
-    min-width: 704px;
+    width: 704px;
     height: 222px;
+    padding: 16px 32px 32px 32px;
     background-image: url(/src/images/header/red_background_tab_1x.jpg);
     border-radius: 15px;
     background-size: cover;
@@ -70,40 +74,34 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .header {
-    min-width: 1216px;
+    width: 1216px;
     height: 316px;
     background-image: url(/src/images/header/red_background_desktop_1x.jpg);
     background-size: contain;
   }
 }
 
-nav {
-  margin-left: 14px;
-  padding-top: 14px;
-}
 @media screen and (min-width: 768px) {
   nav {
     display: flex;
     gap: 4px;
-    margin-left: 16px;
-    padding-top: 16px;
   }
 }
 @media screen and (min-width: 1280px) {
   nav {
     gap: 8px;
-    margin-left: 32px;
-    padding-top: 16px;
   }
 }
 
-.headermenu__list, .headermenu__buttons {
+.headermenu__list,
+.headermenu__buttons {
   display: flex;
   text-align: center;
   gap: 4px;
 }
 @media screen and (min-width: 1280px) {
-  .headermenu__list, .headermenu__buttons {
+  .headermenu__list,
+  .headermenu__buttons {
     gap: 8px;
   }
 }
@@ -118,29 +116,8 @@ nav {
   }
 }
 
-.headermenu__buttons {
-  position: relative;
-  top: 310px;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .headermenu__buttons {
-    position: relative;
-    justify-content: flex-end;
-    top: -45px;
-    left: 14px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .headermenu__buttons {
-    position: relative;
-    justify-content: flex-end;
-    top: -50px;
-    left: -64px;
-  }
-}
-
-.headermenu__item, .headermenu__button {
+.headermenu__item,
+.headermenu__button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -153,17 +130,20 @@ nav {
   outline: none;
 }
 @media screen and (min-width: 768px) {
-  .headermenu__item, .headermenu__button {
+  .headermenu__item,
+  .headermenu__button {
     padding: 12px 22px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .headermenu__item, .headermenu__button {
+  .headermenu__item,
+  .headermenu__button {
     padding: 14px 28px;
   }
 }
 
-.headermenu__item > a, .headermenu__button > a {
+.headermenu__item > a,
+.headermenu__button > a {
   text-decoration: none;
 }
 
@@ -177,12 +157,22 @@ nav {
   background-color: #FFFFFF;
 }
 
-.headermenu__current, .is_active {
+.headermenu__button .is_hiden {
+  opacity: 0;
+}
+
+.headermenu__button .is_active {
+  opacity: 1;
+}
+
+.headermenu__current,
+.is_active {
   color: #FFFFFF;
   background-color: #000000;
 }
 
-.headermenu__btncurrent, .is_active {
+.headermenu__btncurrent,
+.is_active {
   color: #FFFFFF;
   background-color: #B92F2C;
 }
@@ -258,53 +248,29 @@ nav {
   }
 }
 
-.title {
+.header__title {
+  justify-content: flex-start;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-bottom: 20px;
 }
-@media screen and (max-width: 767px) {
-  .title {
-    margin-top: 220px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .title {
-    padding-bottom: 16px;
-    margin-left: 19px;
-    margin-top: 50px;
-    justify-content: flex-start;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .title {
-    padding-bottom: 32px;
-    margin-left: 37px;
-    justify-content: flex-start;
-    margin-top: 110px;
-  }
-}
-
-.title img {
+.header__img {
   max-width: 28px;
   max-height: 28px;
 }
 @media screen and (min-width: 768px) {
-  .title img {
+  .header__img {
     max-width: 33px;
     max-height: 33px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .title img {
+  .header__img {
     width: 50px;
     height: 50px;
   }
 }
 
-header p {
+.header__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -317,14 +283,14 @@ header p {
   color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
-  header p {
+  .header__text {
     font-size: 40px;
     line-height: 1.17;
     margin-left: 11.33px;
   }
 }
 @media screen and (min-width: 1280px) {
-  header p {
+  .header__text {
     font-size: 64px;
     line-height: 1.17;
     margin-left: 20.92px;
