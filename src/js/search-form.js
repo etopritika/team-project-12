@@ -1,29 +1,12 @@
 import ApiService from './api-service';
 import genres from '../data/genres';
-import  Pagination  from 'tui-pagination';
+
 const apiService = new ApiService();
 const movieTrand = document.querySelector('.movie-cards');
 const loader = document.querySelector('.loader');
 
 const form = document.querySelector('#search-form');
 form.addEventListener('submit', onSearch);
-
-const container = document.getElementById('tui-pagination-container');
-
-const pagination = new Pagination(container, {
-  totalItems: 1000,
-  itemsPerPage: 20,
-  visiblePages: 5,
-  page: 1,
-  centerAlign: true,
-});
-
-pagination.on('afterMove', event => {
-  const currentPage = event.page;
-  apiService.moviePage = currentPage;
-  onSearch();
-  console.log();
-});
 
 export function onSearch(e) {
   e.preventDefault();
