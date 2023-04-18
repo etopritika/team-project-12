@@ -23,6 +23,7 @@ export function onSearch(e) {
 
 function hidePagination() {
   document.getElementById('tui-pagination-container').hidden=true;
+  document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
 }
 
 

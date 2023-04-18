@@ -22,7 +22,8 @@ const divLibraryButtons = document.querySelector('.library__buttons');
 // відкриття бібліотеки
 libraryButton.addEventListener('click', clickLibraryButton);
 libraryButton.onclick=function(){
-  document.getElementById('tui-pagination-container').hidden=true
+  document.getElementById('tui-pagination-container').hidden=true;
+  document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
 }
 buttomLibW.addEventListener('click', clickLibAdd);
 buttomLibQ.addEventListener('click', clickLibRem);
@@ -30,7 +31,8 @@ buttomLibQ.addEventListener('click', clickLibRem);
 // вікриття головної сторінки
 homeButton.addEventListener('click', showMainPage);
 homeButton.onclick=function(){
-  document.getElementById('tui-pagination-container').hidden=false
+  document.getElementById('tui-pagination-container').hidden=false;
+  document.querySelector(".movie-cards-wrapper").style.marginBottom = "0px";
 }
 
 // logoArea.addEventListener('click', showMainPage);
