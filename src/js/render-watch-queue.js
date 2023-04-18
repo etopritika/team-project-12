@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 const movieTrand = document.querySelector('.movie-cards');
 
 function renderWatchedMovies() {
@@ -8,7 +9,7 @@ function renderWatchedMovies() {
   if (parsedLocalStorageData === `` || parsedLocalStorageData === null) {
     // const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
     // ul.innerHTML = markup;
-    console.log("У вас ще немає фільмів які ви дивились")
+    Notiflix.Notify.info('Your watched films library is empty');
   }
   else {
     renderMovie(parsedLocalStorageData);
@@ -26,7 +27,7 @@ function renderQueueMovies() {
   movieContainer.innerHTML = '';
 
   if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
-    console.log("Ви не хочете дивитись ніякі фільми")
+    Notiflix.Notify.info('Your queued films library is empty');
   }
   else {
     renderMovie(parsedLocalStorageData);
