@@ -68,10 +68,10 @@ function renderMovie(movies) {
     )
     .join('');
 }
-const btnTest1 = document.querySelector('.test1');
+const btnTest1 = document.querySelector('.watched_button');
 btnTest1.addEventListener('click', renderWatchedMovies);
 
-const btnTest2 = document.querySelector('.test2');
+const btnTest2 = document.querySelector('.queue_button');
 btnTest2.addEventListener('click', renderQueueMovies);
 
 {/* <a class="movie-card__link" href="https://www.themoviedb.org/genre/${genre_id}">${getGenreId(genre_id)}</a> */}
