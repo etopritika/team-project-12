@@ -45,24 +45,30 @@ body {
   }
 }
 
-.container {
-  padding-left: 0;
+header {
+  margin: 20px 0;
+}
+@media screen and (min-width: 768px) {
+  header {
+    margin: 32px 0;
+  }
 }
 
 .header {
-  position: absolute;
-  min-width: 280px;
+  width: 280px;
   height: 460px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
-  margin-top: 14px;
-  margin-left: 14px;
 }
 @media screen and (min-width: 768px) {
   .header {
-    min-width: 704px;
+    width: 704px;
     height: 222px;
+    padding: 16px 32px 32px 32px;
     background-image: url(/src/images/header/red_background_tab_1x.jpg);
     border-radius: 15px;
     background-size: cover;
@@ -70,40 +76,34 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .header {
-    min-width: 1216px;
+    width: 1216px;
     height: 316px;
     background-image: url(/src/images/header/red_background_desktop_1x.jpg);
     background-size: contain;
   }
 }
 
-nav {
-  margin-left: 14px;
-  padding-top: 14px;
-}
 @media screen and (min-width: 768px) {
   nav {
     display: flex;
     gap: 4px;
-    margin-left: 16px;
-    padding-top: 16px;
   }
 }
 @media screen and (min-width: 1280px) {
   nav {
     gap: 8px;
-    margin-left: 32px;
-    padding-top: 16px;
   }
 }
 
-.headermenu__list, .headermenu__buttons {
+.headermenu__list,
+.headermenu__buttons {
   display: flex;
   text-align: center;
   gap: 4px;
 }
 @media screen and (min-width: 1280px) {
-  .headermenu__list, .headermenu__buttons {
+  .headermenu__list,
+  .headermenu__buttons {
     gap: 8px;
   }
 }
@@ -118,29 +118,22 @@ nav {
   }
 }
 
-.headermenu__buttons {
-  position: relative;
-  top: 310px;
-  justify-content: center;
+@media screen and (max-width: 767px) {
+  .headermenu__buttons {
+    order: 3;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
 }
 @media screen and (min-width: 768px) {
   .headermenu__buttons {
-    position: relative;
-    justify-content: flex-end;
-    top: -45px;
-    left: 14px;
+    margin-left: auto;
   }
 }
-@media screen and (min-width: 1280px) {
-  .headermenu__buttons {
-    position: relative;
-    justify-content: flex-end;
-    top: -50px;
-    left: -64px;
-  }
-}
-
-.headermenu__item, .headermenu__button {
+.headermenu__item,
+.headermenu__button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -153,17 +146,20 @@ nav {
   outline: none;
 }
 @media screen and (min-width: 768px) {
-  .headermenu__item, .headermenu__button {
+  .headermenu__item,
+  .headermenu__button {
     padding: 12px 22px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .headermenu__item, .headermenu__button {
+  .headermenu__item,
+  .headermenu__button {
     padding: 14px 28px;
   }
 }
 
-.headermenu__item > a, .headermenu__button > a {
+.headermenu__item > a,
+.headermenu__button > a {
   text-decoration: none;
 }
 
@@ -177,15 +173,7 @@ nav {
   background-color: #ffffff;
 }
 
-.headermenu__current, .is_active {
-  color: #ffffff;
-  background-color: #000000;
-}
 
-.headermenu__btncurrent, .is_active {
-  color: #ffffff;
-  background-color: #b92f2c;
-}
 
 .search-form {
   position: relative;
@@ -258,53 +246,42 @@ nav {
   }
 }
 
-.title {
+.header__title {
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-bottom: 20px;
+  margin-right: auto;
+  margin-top: auto;
 }
 @media screen and (max-width: 767px) {
-  .title {
-    margin-top: 220px;
+  .header__title {
+    margin-left: auto;
   }
 }
 @media screen and (min-width: 768px) {
-  .title {
-    padding-bottom: 16px;
-    margin-left: 19px;
-    margin-top: 50px;
+  .header__title {
+    margin-top: auto;
     justify-content: flex-start;
+    margin-right: auto;
   }
 }
-@media screen and (min-width: 1280px) {
-  .title {
-    padding-bottom: 32px;
-    margin-left: 37px;
-    justify-content: flex-start;
-    margin-top: 110px;
-  }
-}
-
-.title img {
+.header__img {
   max-width: 28px;
   max-height: 28px;
 }
 @media screen and (min-width: 768px) {
-  .title img {
+  .header__img {
     max-width: 33px;
     max-height: 33px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .title img {
+  .header__img {
     width: 50px;
     height: 50px;
   }
 }
 
-header p {
+.header__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -317,14 +294,14 @@ header p {
   color: #ffffff;
 }
 @media screen and (min-width: 768px) {
-  header p {
+  .header__text {
     font-size: 40px;
     line-height: 1.17;
     margin-left: 11.33px;
   }
 }
 @media screen and (min-width: 1280px) {
-  header p {
+  .header__text {
     font-size: 64px;
     line-height: 1.17;
     margin-left: 20.92px;
