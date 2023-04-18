@@ -55,10 +55,10 @@ export function addQueueMovieInLocalStorage() {
   const vote_count = document.querySelector('.modal-vote_count').textContent;
   const popularity = document.querySelector('.modal-popularity').textContent;
   const original_title = document.querySelector('.modal-original-title').textContent;
-  const genres = document.querySelectorAll('.genres');
+  let genres = document.querySelectorAll('.genres');
   const overview = document.querySelector('.modal-overview').textContent;
   const title = document.querySelector('.modal-title').textContent;
-  let genresArr = '';
+  let genresArr = [];
   
   for (let i = 0; i < genres.length; i+=1) {
     genresArr.push(genres[i].textContent);
