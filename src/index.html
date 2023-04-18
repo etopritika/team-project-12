@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <include src="./partials/header.html"></include>
     <main>
-    <include src="./partials/films-container.html"></include>
-    <include src="./partials/page-links.html"></include>
+      <button class="test1">WATCHED</button>
+      <button class="test2">QUEUE</button>
+      <include src="./partials/films-container.html"></include>
+      <include src="./partials/page-links.html"></include>
+      <include src="./partials/modal.html"></include>
+      <include src="./partials/team-modal.html"></include>
+      <include src="./partials/button-up.html"></include>
     </main>
     <include src="./partials/footer.html"></include>
     <script type="module" src="./js/index.js"></script>
