@@ -11,11 +11,13 @@ function renderWatchedMovies() {
     console.log("У вас ще немає фільмів які ви дивились")
   }
   else {
-        parsedLocalStorageData.forEach(obj => {
-          console.log(obj);
-      const movie = renderMovie(obj);
-      movieContainer.appendChild(movie);
-    });
+    renderMovie(parsedLocalStorageData);
+    console.log(parsedLocalStorageData);
+    //     parsedLocalStorageData.forEach(obj => {
+    //       console.log(obj);
+    //   const movie = renderMovie(obj);
+    //   movieContainer.appendChild(movie);
+    // });
   }
 }
 function renderQueueMovies() {
@@ -27,16 +29,17 @@ function renderQueueMovies() {
     console.log("Ви не хочете дивитись ніякі фільми")
   }
   else {
-    
-    parsedLocalStorageData.forEach(obj => {
-      const movie = renderMovie(obj);
-      movieContainer.appendChild(movie);
-    });
+    renderMovie(parsedLocalStorageData);
+    console.log(parsedLocalStorageData);
+    // parsedLocalStorageData.forEach(obj => {
+    //   const movie = renderMovie(obj);
+    //   movieContainer.appendChild(movie);
+    // });
   }
 }
 
 function renderMovie(movies) {
-  console.log(movies);
+  // console.log(movies);
  movieTrand.innerHTML = movies
     .map(
       movie => `
@@ -49,14 +52,7 @@ function renderMovie(movies) {
             </h2>
             <div class="movie-card__info">
             <p class="movie-card__genre">
-            ${movie.genre_ids
-              .map(
-                genre_id =>
-                  `<a class="movie-card__link" href="https://www.themoviedb.org/genre/${genre_id}">${getGenreId(
-                    genre_id
-                  )}</a>`
-              )
-              .join(', ')}
+            
           </p>
           <p class="movie-card__release-date">
             <a class="movie-card__link" href="https://www.themoviedb.org/movie/${
@@ -77,3 +73,5 @@ btnTest1.addEventListener('click', renderWatchedMovies);
 
 const btnTest2 = document.querySelector('.test2');
 btnTest2.addEventListener('click', renderQueueMovies);
+
+{/* <a class="movie-card__link" href="https://www.themoviedb.org/genre/${genre_id}">${getGenreId(genre_id)}</a> */}
