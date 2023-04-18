@@ -22,6 +22,7 @@ pagination.on('afterMove', event => {
   const currentPage = event.page;
   apiService.moviePage = currentPage;
   onSearch();
+  console.log();
 });
 
 export function onSearch(e) {
