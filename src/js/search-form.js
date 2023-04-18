@@ -12,13 +12,17 @@ export function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
   loader.classList.remove('loader-hidden'); // показати спінер
+  fetchSearchMovies();
+  hidePagination();
+  // const clearPagination = document.querySelector(".tui-pagination");
+  // clearPagination.style.display = "none";
+}
+
+function fetchSearchMovies() {
   apiService.fetchArticles().then(renderMovies)//Повертає масив пошуку фільму
         .finally(() => {
       loader.classList.add('loader-hidden'); // приховати спінер
     });
-  hidePagination()
-  // const clearPagination = document.querySelector(".tui-pagination");
-  // clearPagination.style.display = "none";
 }
 
 function hidePagination() {
