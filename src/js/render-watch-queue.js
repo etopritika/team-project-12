@@ -1,3 +1,4 @@
+const movieTrand = document.querySelector('.movie-cards');
 
 function renderWatchedMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('watched-movies'));
@@ -11,6 +12,7 @@ function renderWatchedMovies() {
   }
   else {
         parsedLocalStorageData.forEach(obj => {
+          console.log(obj);
       const movie = renderMovie(obj);
       movieContainer.appendChild(movie);
     });
@@ -33,7 +35,8 @@ function renderQueueMovies() {
   }
 }
 
-function renderMovie(obj) {
+function renderMovie(movies) {
+  console.log(movies);
  movieTrand.innerHTML = movies
     .map(
       movie => `
