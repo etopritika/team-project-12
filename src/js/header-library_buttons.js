@@ -1,3 +1,9 @@
+import ApiService from './api-service.js';
+import renderMovies from './render-trandFilms';
+
+const apiService = new ApiService();
+const movieTrand = document.querySelector('.movie-cards');
+
 // кнопки основної сторінки
 const libraryButton = document.querySelector('.library_button');
 const homeButton = document.querySelector('.home_button');
@@ -20,6 +26,7 @@ buttomLibQ.addEventListener('click', clickLibRem);
 
 // вікриття головної сторінки
 homeButton.addEventListener('click', showMainPage);
+
 // logoArea.addEventListener('click', showMainPage);
 function clickLibAdd() {
   buttomLibW.classList.add('lbr-active');
@@ -56,3 +63,13 @@ function showMainPage() {
   form.classList.remove('is_hidden');
   headerOrange.classList.remove('header-orange');
 }
+
+homeButton.addEventListener('click', () => {
+  apiService
+    .fetchTrending()
+    .then(response => response.results)
+    .then(movies => {
+      renderMovies(movies);
+    })
+    .catch(error => console.log(error));
+});
