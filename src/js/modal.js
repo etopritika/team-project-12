@@ -19,19 +19,11 @@ export function onOpenModal() {
 }
 
 export function appendModalMarkup(movie) {
-<<<<<<< Updated upstream
-  // console.log(movie);
-  const cardOfFilms = `
-
-   <div class="modal-card" data-film-id="${movie.id}">
-   <div class="modal-card">            
-=======
   
   const cardOfFilms = `
 
    <div class="modal-card" data-film-id="${movie.id}">
-             
->>>>>>> Stashed changes
+          
   <div >
   <img class="modal-img" src= https://image.tmdb.org/t/p/w500/${movie.poster_path} alt=${movie.title} />
   </div>
@@ -47,7 +39,7 @@ export function appendModalMarkup(movie) {
        <li class="modal-item-list"><span class="modal-item"> Popularity </span><span class="modal-popularity">${movie.popularity.toFixed(1)}</span></li>
        <li class="modal-item-list"><span class="modal-item"> Original Title</span><span class="modal-original-title">${movie.original_title}</span></li>
        <li class="modal-item-list"><span class="modal-item"> Genre</span>
-       ${movie.genres.map( genre => `<span class="genres"> ${genre.name} </span>`)}
+       ${movie.genres.map( genre => <span class="genres"> ${genre.name} </span>)}
            </li>
    </ul>
    <h3 class="modal-about">ABOUT</h3>
@@ -60,8 +52,8 @@ export function appendModalMarkup(movie) {
    </div>`;
 
   refs.modalConteiner.insertAdjacentHTML('beforeend', cardOfFilms);
-  const btnAddToWatched = document.querySelector('.add-watched');
-  const btnAddToQueue = document.querySelector('.add-queue');
+  const btnAddToWatched = document.querySelector('.modal-add-watched');
+  const btnAddToQueue = document.querySelector('.modal-add-queue');
 
   btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
   btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);

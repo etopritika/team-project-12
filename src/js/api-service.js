@@ -2,6 +2,7 @@ import Notiflix from 'notiflix';
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '604d147cd55c0bcd03b68a72549a64de';
 const LANGUAGE = 'en';
+const POSTER = null;
 
 
 export default class ApiService {
@@ -17,13 +18,15 @@ export default class ApiService {
     )
       .then(response => response.json())
       .then(response => response.results)
-      .then(result => {
-        
-        if(result.length === 0) {
+      .then(results => {
+        const havePoster = results.filter(result => result.poster_path !== POSTER);
+        // const langFilter = havePoster.filter(result => result.original_language === LANGUAGE);
+        // console.log(results);
+        if(havePoster.length === 0) {
           Notiflix.Notify.failure('Search result not successful. Enter the correct movie name.');
           return;
         }
-        return result;
+        return havePoster;
       })
   }
 

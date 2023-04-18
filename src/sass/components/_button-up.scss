@@ -3,10 +3,10 @@
   background-color: $red-clr;
 
   right: 20px;
-  bottom: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
+  bottom: 20px;
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
 
   display: flex;

@@ -1,16 +1,27 @@
-// .container {
-//   padding-left: 0;
-// }
 header {
-    margin-bottom: 20px;
-    @media screen and (min-width: 768px){
-        margin-bottom: 32px;
-    }
+  margin: 20px 0;
+  @media screen and (min-width: 768px) {
+    margin: 32px 0;
+  }
+}
+
+.test-header {
+  display: flex;
+  align-items: stretch;
+  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .header {
-  // position: absolute;
-  // min-width: 280px;
+  position: relative;
+  display: flex;
   width: 280px;
   height: 460px;
   padding: 14px;
@@ -18,11 +29,8 @@ header {
   background-image: url(/src/images/header/red_background_mobile_1x.jpg);
   border-radius: 10px;
   background-repeat: no-repeat;
-  //   margin-top: 14px;
-  // margin-left: 14px;
 
   @media screen and (min-width: 768px) {
-    // min-width: 704px;
     width: 704px;
     height: 222px;
     padding: 16px;
@@ -32,29 +40,44 @@ header {
   }
 
   @media screen and (min-width: 1280px) {
-    // min-width: 1216px;
     width: 1216px;
     height: 316px;
+    padding: 16px 32px 32px 32px;
     background-image: url(/src/images/header/red_background_desktop_1x.jpg);
+    background-size: contain;
+  }
+}
+.header-orange {
+  background-image: url(/src/images/header/orange_background_mobile_1x.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 222px;
+    padding: 16px;
+    background-image: url(/src/images/header/background_for_orange_1x.jpg);
+    border-radius: 15px;
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1216px;
+    height: 316px;
+    padding: 16px 32px 32px 32px;
+    background-image: url(/src/images/header/background_for_orange_2x.jpg);
     background-size: contain;
   }
 }
 
 nav {
-  //   margin-left: 14px;
-  //   padding-top: 14px;
-
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 4px;
-    // margin-left: 16px;
-    // padding-top: 16px;
   }
 
   @media screen and (min-width: 1280px) {
     gap: 8px;
-    margin-left: 32px;
-    padding-top: 16px;
   }
 }
 
@@ -79,23 +102,26 @@ nav {
 }
 
 .headermenu__buttons {
-  position: relative;
-  top: 310px;
-  justify-content: center;
+  display: none;
 
   @media screen and (min-width: 768px) {
-    position: relative;
-    justify-content: flex-end;
-    top: -45px;
-    left: 14px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
-
   @media screen and (min-width: 1280px) {
-    position: relative;
-    justify-content: flex-end;
-    top: -50px;
-    left: -64px;
+    position: absolute;
+    top: 16px;
+    right: 32px;
   }
+}
+
+.is_activity {
+  display: flex;
+}
+
+.is_hidden {
+  display: none;
 }
 
 .headermenu__item,
@@ -110,6 +136,8 @@ nav {
   border-radius: 100px;
   gap: 10px;
   outline: none;
+
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     padding: 12px 22px;
@@ -130,9 +158,23 @@ nav {
   background-color: $white-clr;
 }
 
+.headermenu__item:hover {
+  transform: scale(1.02);
+  transition: $tr-delay;
+}
+
 .headermenu__button {
   color: $red-clr;
   background-color: $white-clr;
+}
+.headermenu__button:hover {
+  transform: scale(1.02);
+  transition: $tr-delay;
+}
+
+.header-title:hover {
+  transform: scale(1.02);
+  transition: $tr-delay;
 }
 
 .headermenu__current,
@@ -181,7 +223,7 @@ nav {
   background-color: transparent;
   padding-top: 10px;
   padding-bottom: 10px;
-
+  outline: none;
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: 1.14;
@@ -213,44 +255,24 @@ nav {
   }
 }
 
-.title {
+.header-title {
+  justify-content: flex-start;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-bottom: 20px;
-
-  @media screen and (max-width: 767px) {
-    margin-top: 220px;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding-bottom: 16px;
-    margin-left: 19px;
-    margin-top: 50px;
-    justify-content: flex-start;
-  }
-
-  @media screen and (min-width: 1280px) {
-    padding-bottom: 32px;
-    margin-left: 37px;
-    justify-content: flex-start;
-    margin-top: 110px;
-  }
 }
 
-.title img {
-  max-width: 28px;
-  max-height: 28px;
+.header-img {
+  width: 32px;
+  height: 32px;
 
   @media screen and (min-width: 768px) {
-    max-width: 33px;
-    max-height: 33px;
+    width: 40px;
+    height: 40px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 50px;
-    height: 50px;
+    width: 59px;
+    height: 59px;
   }
 }
 

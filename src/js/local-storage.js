@@ -1,25 +1,24 @@
 export function addWatchedMovieInLocalStorage() {
   const modal = document.querySelector('.modal');
 
+  const id = document.querySelector('.modal-card').getAttribute('data-film-id');
   const poster_path = document.querySelector('.modal-img').getAttribute('src');
   const release_date = document.querySelector('.modal-info').getAttribute('data-release-date');
-  const vote_average = document.querySelector('.vote_average').textContent;
-  const vote_count = document.querySelector('.vote_count').textContent;
-  const popularity = document.querySelector('.popularity').textContent;
-  const original_title = document.querySelector('.original-title').textContent;
+  const vote_average = document.querySelector('.modal-vote_average').textContent;
+  const vote_count = document.querySelector('.modal-vote_count').textContent;
+  const popularity = document.querySelector('.modal-popularity').textContent;
+  const original_title = document.querySelector('.modal-original-title').textContent;
   let genres = document.querySelectorAll('.genres');
-  const overview = document.querySelector('.overview').textContent;
-  const title = document.querySelector('.title').textContent;
-  let genresStr = '';
+  const overview = document.querySelector('.modal-overview').textContent;
+  const title = document.querySelector('.modal-title').textContent;
+  let genresArr = [];
 
   for (let i = 0; i < genres.length; i+=1) {
-    genresStr += genres[i].textContent;
-    if (i !== genres.length - 1) {
-      genresStr += ', '
-    }
+    genresArr.push(genres[i].textContent);
   }
 
   const movieDetails = {
+    id,
     release_date,
     poster_path,
     title,
@@ -27,7 +26,7 @@ export function addWatchedMovieInLocalStorage() {
     vote_count,
     popularity,
     original_title,
-    genres: genresStr, 
+    genres: genresArr, 
     overview
   }
 
@@ -49,25 +48,24 @@ export function addWatchedMovieInLocalStorage() {
 export function addQueueMovieInLocalStorage() {
   const modal = document.querySelector('.modal');
 
+  const id = document.querySelector('.modal-card').getAttribute('data-film-id');
   const poster_path = document.querySelector('.modal-img').getAttribute('src');
   const release_date = document.querySelector('.modal-info').getAttribute('data-release-date');
-  const vote_average = document.querySelector('.vote_average').textContent;
-  const vote_count = document.querySelector('.vote_count').textContent;
-  const popularity = document.querySelector('.popularity').textContent;
-  const original_title = document.querySelector('.original-title').textContent;
-  const genres = document.querySelectorAll('.genres');
-  const overview = document.querySelector('.overview').textContent;
-  const title = document.querySelector('.title').textContent;
-  let genresStr = '';
-
+  const vote_average = document.querySelector('.modal-vote_average').textContent;
+  const vote_count = document.querySelector('.modal-vote_count').textContent;
+  const popularity = document.querySelector('.modal-popularity').textContent;
+  const original_title = document.querySelector('.modal-original-title').textContent;
+  let genres = document.querySelectorAll('.genres');
+  const overview = document.querySelector('.modal-overview').textContent;
+  const title = document.querySelector('.modal-title').textContent;
+  let genresArr = [];
+  
   for (let i = 0; i < genres.length; i+=1) {
-    genresStr += genres[i].textContent;
-    if (i !== genres.length - 1) {
-      genresStr += ', '
-    }
+    genresArr.push(genres[i].textContent);
   }
 
   const movieDetails = {
+    id,
     release_date,
     poster_path,
     title,
@@ -75,7 +73,7 @@ export function addQueueMovieInLocalStorage() {
     vote_count,
     popularity,
     original_title,
-    genres: genresStr, 
+    genres: genresArr, 
     overview
   }
 
