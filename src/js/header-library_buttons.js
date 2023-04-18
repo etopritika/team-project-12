@@ -7,16 +7,28 @@ const headerOrange = document.querySelector('.header');
 
 // ДОБАВИЛ НА КНОПУ ПОЯВЛЕНИЕ КНОПОК БИБЛИОТЕКИ
 const buttomLibrary = document.querySelector('.headermenu__buttons');
+const buttomLibW = document.querySelector('.btnW');
+const buttomLibQ = document.querySelector('.btnQ');
 
 // блок з кнопками бібліотеки
 const divLibraryButtons = document.querySelector('.library__buttons');
 
 // відкриття бібліотеки
 libraryButton.addEventListener('click', clickLibraryButton);
+buttomLibW.addEventListener('click', clickLibAdd);
+buttomLibQ.addEventListener('click', clickLibRem);
 
 // вікриття головної сторінки
 homeButton.addEventListener('click', showMainPage);
 // logoArea.addEventListener('click', showMainPage);
+function clickLibAdd() {
+  buttomLibW.classList.add('lbr-active');
+  buttomLibQ.classList.remove('lbr-active');
+}
+function clickLibRem() {
+  buttomLibQ.classList.add('lbr-active');
+  buttomLibW.classList.remove('lbr-active');
+}
 
 // функція для відкриття бібліотеки
 function clickLibraryButton() {

@@ -164,7 +164,7 @@ nav {
 }
 
 .headermenu__button {
-  color: $red-clr;
+  color: $black-clr;
   background-color: $white-clr;
 }
 .headermenu__button:hover {
@@ -179,12 +179,20 @@ nav {
 
 .headermenu__current,
 .is_active {
-  color: $white-clr;
-  background-color: $black-clr;
+  color: $black-clr;
+  background-color: $white-clr;
 }
 
 .headermenu__btncurrent,
 .is_active {
+  color: $white-clr;
+  background-color: $black-clr;
+}
+.lbr-btn {
+  color: $red-clr;
+  background-color: $white-clr;
+}
+.lbr-active {
   color: $white-clr;
   background-color: $red-clr;
 }
