@@ -19,7 +19,7 @@ export function onOpenModal() {
 }
 
 export function appendModalMarkup(movie) {
-  console.log(movie)
+  // console.log(movie)
   const cardOfFilms = `
 
    <div class="modal-card" data-film-id="${movie.id}">
