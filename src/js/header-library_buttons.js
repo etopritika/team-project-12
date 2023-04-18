@@ -29,6 +29,9 @@ buttomLibQ.addEventListener('click', clickLibRem);
 
 // вікриття головної сторінки
 homeButton.addEventListener('click', showMainPage);
+homeButton.onclick=function(){
+  document.getElementById('tui-pagination-container').hidden=false
+}
 
 // logoArea.addEventListener('click', showMainPage);
 function clickLibAdd() {
