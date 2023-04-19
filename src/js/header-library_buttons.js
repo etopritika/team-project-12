@@ -15,6 +15,7 @@ refs.buttomLibQ.addEventListener('click', clickLibRem);
 
 refs.homeButton.addEventListener('click', showMainPage);
 refs.homeButton.onclick=function(){
+  document.querySelector('.container').style.marginBottom="0px"
   document.getElementById('tui-pagination-container').hidden=false;
   document.querySelector(".movie-cards-wrapper").style.marginBottom = "0px";
 }
