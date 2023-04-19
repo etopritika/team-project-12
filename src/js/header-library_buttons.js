@@ -60,7 +60,6 @@ function showMainPage() {
 refs.homeButton.addEventListener('click', () => {
   apiService
     .fetchTrending()
-    .then(response => response.results)
     .then(movies => {
       renderMovies(movies);
     })
