@@ -21,7 +21,7 @@ function renderQueueMovies() {
 
   if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
     Notiflix.Notify.info('Your queued films library is empty');
-    document.querySelector('.container').style.marginBottom="238px"
+    document.querySelector('.container').style.marginBottom="260px"
   }
   else {
     renderMovie(parsedLocalStorageData);
