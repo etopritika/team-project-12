@@ -45,11 +45,7 @@ body.show-modal .modal-backdrop {
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-    
-
-       
-    
- @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 1280px) {
     min-width: 806px;
     padding: 40px 12px;
    }
@@ -64,14 +60,8 @@ body.show-modal .modal-backdrop {
     padding: 50px 20px;
     position: absolute;
     top:10%;
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
 }
-
 }
-
 .modal-card {   
 
 @media screen and (min-width: 768px) {
@@ -214,8 +204,6 @@ display: flex;
 
 .modal-original-title {
     text-transform: uppercase;
-<<<<<<< Updated upstream
-
     @media screen and (min-width: 320px)and (max-width: 767px) {
         margin-left: 17px;
     }
@@ -236,8 +224,6 @@ display: flex;
     @media screen and (min-width: 320px)and (max-width: 767px) {
         margin-left: 76px;
     }
-=======
->>>>>>> Stashed changes
 }
 
 .modal-about {
@@ -371,5 +357,3 @@ display: flex;
     color: aliceblue
     
 }
-
-
