@@ -7,6 +7,9 @@ function renderMyLibrary() {
   const allParsedMovies = parsedWatched.concat(parsedQueue);
   if(allParsedMovies.length === 0) {
     Notiflix.Notify.info('Your films library is empty');
+    document.querySelector('.container').style.marginBottom="238px"
+  }else if(allParsedMovies.length === 1){
+    document.querySelector('.container').style.marginBottom="0px"
   }
 
   refs.movieContainer.innerHTML = '';

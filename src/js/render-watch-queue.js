@@ -8,18 +8,10 @@ function renderWatchedMovies() {
   refs.movieContainer.innerHTML = '';
 
   if (parsedLocalStorageData === `` || parsedLocalStorageData === null) {
-    // const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
-    // ul.innerHTML = markup;
     Notiflix.Notify.info('Your watched films library is empty');
   }
   else {
     renderMovie(parsedLocalStorageData);
-    // console.log(parsedLocalStorageData);
-    //     parsedLocalStorageData.forEach(obj => {
-    //       console.log(obj);
-    //   const movie = renderMovie(obj);
-    //   movieContainer.appendChild(movie);
-    // });
   }
 }
 function renderQueueMovies() {
@@ -29,14 +21,11 @@ function renderQueueMovies() {
 
   if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
     Notiflix.Notify.info('Your queued films library is empty');
+    document.querySelector('.container').style.marginBottom="238px"
   }
   else {
     renderMovie(parsedLocalStorageData);
-    // console.log(parsedLocalStorageData);
-    // parsedLocalStorageData.forEach(obj => {
-    //   const movie = renderMovie(obj);
-    //   movieContainer.appendChild(movie);
-    // });
+ 
   }
 }
 
@@ -63,8 +52,7 @@ function renderQueueMovies() {
 //             ${movie.release_date.split('-')[0]}
 //             </a>
 //           </p>  
-//             </div>
-            
+//             </div>          
 //         </li>
 //       `
 //     )
