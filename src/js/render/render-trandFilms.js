@@ -1,9 +1,8 @@
-import ApiService from './api-service.js';
-import genres from '../data/genres';
-import refs from './refs';
-import renderMovies from "./card-film-template.js";
+import ApiService from '../api-service.js';
+// import genres from '../data/genres.json';
+// import refs from './refs';
+import renderMovies from '../template/card-film-template.js';
 const apiService = new ApiService();
-
 
 // function getGenreId(genreId) {
 //   const genre = genres.genres.find(function (genre) {
@@ -44,9 +43,9 @@ const apiService = new ApiService();
 //             }?language=en-US">
 //             ${movie.release_date.split('-')[0]}
 //             </a>
-//           </p>  
+//           </p>
 //             </div>
-            
+
 //         </li>
 //       `
 //     )
@@ -60,7 +59,6 @@ apiService
   .catch(error => console.log(error));
 
 window.addEventListener('load', () => {
-
   const loader = document.querySelector('.loader');
 
   loader.classList.add('loader-hidden');
@@ -69,4 +67,3 @@ window.addEventListener('load', () => {
     // document.body.removeChild(loader);
   });
 });
-

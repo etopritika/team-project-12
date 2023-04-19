@@ -1,5 +1,5 @@
 import ApiService from './api-service.js';
-import refs from './refs';
+import refs from './refs/refs.js';
 const apiService = new ApiService();
 import { addWatchedMovieInLocalStorage } from './local-storage.js';
 import { addQueueMovieInLocalStorage } from './local-storage.js';

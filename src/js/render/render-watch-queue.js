@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
-import refs from './refs';
-import renderMovie from "./library-card-template";
+import refs from '../refs/refs';
+import renderMovie from "../template/library-card-template";
 
 function renderWatchedMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('watched-movies'));

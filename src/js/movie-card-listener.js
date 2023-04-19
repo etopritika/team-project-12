@@ -1,7 +1,7 @@
 import ApiService from './api-service.js';
 import { onOpenModal } from "./modal.js";
-import { appendModalMarkup } from "./modal-card-template.js";
-import refs from './refs';
+import { appendModalMarkup } from "./template/modal-card-template.js";
+import refs from './refs/refs.js';
 
 // console.log(modalElement);
 const apiService = new ApiService();
