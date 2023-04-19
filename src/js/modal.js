@@ -10,8 +10,18 @@ refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 
 export function onOpenModal() {
-  window.addEventListener('keydown', onEscKeyPress);
+  const loader_m = document.createElement('div');
+  loader_m.classList.add('loader-modal');
+  document.body.appendChild(loader_m);
+
+  setTimeout(() => {
+  loader_m.classList.add('loader-hidden-modal');
+  }, 200);
+
+  window.addEventListener('keydown', onEscKeyPress); 
+  setTimeout(() => {
   document.body.classList.add('show-modal');
+  }, 300);
   
 }
 

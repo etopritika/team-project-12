@@ -33,3 +33,42 @@
         transform: rotate(1turn);
     }
 }
+
+
+
+.loader-modal {
+    position: fixed;
+    top: 50%;
+    left: 47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: opacity($color: #000000);
+    transition: opacity 0.75s, visibility 0.75s;
+
+}
+
+.loader-hidden-modal {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-modal::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 10px solid #ddd;
+    border-top-color: $red-clr;
+    border-radius: 50%;
+    animation: loading 0.50s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
