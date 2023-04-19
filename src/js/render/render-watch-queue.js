@@ -6,7 +6,6 @@ function renderWatchedMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('watched-movies'));
   
   refs.movieContainer.innerHTML = '';
-  console.log(parsedLocalStorageData);
   if (parsedLocalStorageData.length === 0) {
     Notiflix.Notify.info('Your watched films library is empty');
   }
@@ -24,7 +23,6 @@ function renderQueueMovies() {
   }
   else {
     renderMovie(parsedLocalStorageData);
- 
   }
 }
 
