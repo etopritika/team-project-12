@@ -40,7 +40,10 @@ export default class ApiService {
       `${BASE_URL}3/trending/movie/week?api_key=${API_KEY}&page=${this.page}&language=en-US`
     )
       .then(response => response.json())
-      .then(response => response)
+      .then(response => {
+        const havePoster = response.results.filter(result => result.poster_path !== POSTER);
+        return havePoster;
+      })
       
   }
 

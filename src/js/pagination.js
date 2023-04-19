@@ -18,7 +18,7 @@ const pagination = new Pagination(refs.container, {
 export function fetchMovies(page) {
   apiService.moviePage = page;
   apiService.fetchTrending().then(data => {
-    renderMovies(data.results);
+    renderMovies(data);
   }).catch(error => console.log(error));
 }
 

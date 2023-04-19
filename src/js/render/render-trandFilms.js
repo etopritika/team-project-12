@@ -4,7 +4,6 @@ const apiService = new ApiService();
 
 apiService
   .fetchTrending()
-  .then(response => response.results)
   .then(renderMovies)
   .catch(error => console.log(error));
 
