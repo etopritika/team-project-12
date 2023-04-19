@@ -27,16 +27,16 @@ export function appendModalMarkup(movie) {
            1
          )}</span></li>
          <li class="modal-item-list">
-            <span class="modal-item"> Original Title</span>
+            <div class="modal-item-title">
+            <span >Original</span> <span > Title</span>
+            </div>
             <div class="modal-original-title">
             <span >${movie.original_title}</span>
             </div>
           </li>
          <li class="modal-item-list">
-            <div class="modal-item"> <span > Genre</span></div>
-            <div class="genres"> ${movie.genres
-              .map(genre => `<span > ${genre.name} </span>`)
-              .join(',&nbsp')}</div>
+            <div class="modal-item-genres"> <span > Genre</span></div>
+            <div> ${movie.genres.map( genre => `<span > ${genre.name} </span>`).join(',&nbsp')}</div>
           </li>
      </ul>
      <h3 class="modal-about">ABOUT</h3>
