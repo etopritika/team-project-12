@@ -60,9 +60,13 @@ apiService
   .catch(error => console.log(error));
 
 window.addEventListener('load', () => {
-   
-    refs.loader.classList.add('loader-hidden');
-    refs.loader.addEventListener('transitionend', () => {
-        // document.body.removeChild(loader);
-    })
+
+  const loader = document.querySelector('.loader');
+
+  loader.classList.add('loader-hidden');
+
+  loader.addEventListener('transitionend', () => {
+    // document.body.removeChild(loader);
+  });
 });
+
