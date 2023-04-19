@@ -202,12 +202,6 @@ display: flex;
     margin-left: 7px;
 }
 
-.modal-original-title {
-    text-transform: uppercase;
-    @media screen and (min-width: 320px)and (max-width: 767px) {
-        margin-left: 17px;
-    }
-}
 
 .modal-about {
     margin-bottom: 8px;
