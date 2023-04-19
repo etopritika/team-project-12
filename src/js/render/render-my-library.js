@@ -16,9 +16,18 @@ function renderMyLibrary() {
 }
 
 function renderMovie(movies) {
-  refs.movieTrand.innerHTML = movies
-    .map(
-      movie => `
+  const loader = document.createElement('div');
+  loader.classList.add('loader');
+  loader.id = 'loader';
+  document.body.appendChild(loader);
+
+  refs.movieTrand.innerHTML = '';
+  refs.movieTrand.appendChild(loader);
+
+  setTimeout(() => {
+    refs.movieTrand.innerHTML = movies
+      .map(
+        movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">
             <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${
               movie.poster_path
@@ -41,8 +50,11 @@ function renderMovie(movies) {
             
         </li>
       `
-    )
-    .join('');
+      )
+      .join('');
+    const loader = document.getElementById('loader');
+    loader.classList.add('loader-hidden');
+  }, 500);
 }
 
 refs.btnMyLibrary.addEventListener('click', renderMyLibrary);
