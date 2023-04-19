@@ -16,13 +16,13 @@ function renderMyLibrary() {
 }
 
 function renderMovie(movies) {
-  const loader = document.createElement('div');
-  loader.classList.add('loader');
-  loader.id = 'loader';
-  document.body.appendChild(loader);
+  // const loader = document.createElement('div');
+  // loader.classList.add('loader');
+  // loader.id = 'loader';
+  // document.body.appendChild(loader);
 
   refs.movieTrand.innerHTML = '';
-  refs.movieTrand.appendChild(loader);
+  // refs.movieTrand.appendChild(loader);
 
   setTimeout(() => {
     refs.movieTrand.innerHTML = movies
@@ -52,8 +52,8 @@ function renderMovie(movies) {
       `
       )
       .join('');
-    const loader = document.getElementById('loader');
-    loader.classList.add('loader-hidden');
+    // const loader = document.getElementById('loader');
+    // loader.classList.add('loader-hidden');
   }, 500);
 }
 
