@@ -15,7 +15,6 @@ export function onOpenModal() {
   
 }
 
-
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-modal');
