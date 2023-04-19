@@ -59,11 +59,11 @@ apiService
   .catch(error => console.log(error));
 
 window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
+  const loader = document.querySelector('.loader');
 
-    loader.classList.add('loader-hidden');
+  loader.classList.add('loader-hidden');
 
-    loader.addEventListener('transitionend', () => {
-        // document.body.removeChild(loader);
-    })
+  loader.addEventListener('transitionend', () => {
+    // document.body.removeChild(loader);
+  });
 });
