@@ -246,11 +246,11 @@ display: flex;
         margin-right: 4px;
     }
 
-    // &:active{
-    //     background-color: $hover-red-color;
-    //     transition: $tr-delay;
-    //     transition-timing-function: $tr-timing-function;
-    // }
+    &:active{
+        background-color: $hover-red-color;
+        transition: $tr-delay;
+        transition-timing-function: $tr-timing-function;
+    }
         
 }
 .modal-add-watched:hover{
@@ -283,6 +283,11 @@ display: flex;
 
     @media screen and (min-width: 320px)and (max-width: 767px) {
         min-width: 111px;
+    }
+    &:active{
+        background-color: $hover-red-color;
+        transition: $tr-delay;
+        transition-timing-function: $tr-timing-function;
     }
 }
 
