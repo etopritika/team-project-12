@@ -1,10 +1,10 @@
 import refs from '../refs/refs';
 
 export default function renderMovie(movies) {
-    // console.log(movies);
-   refs.movieTrand.innerHTML = movies
-      .map(
-        movie => `
+  // console.log(movies);
+  refs.movieTrand.innerHTML = movies
+    .map(
+      movie => `
           <li class="movie-card__item" data-film-id="${movie.id}">
               <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${
                 movie.poster_path
@@ -14,7 +14,7 @@ export default function renderMovie(movies) {
               </h2>
               <div class="movie-card__info">
               <p class="movie-card__genre">
-                ${movie.genres.map(genre => genre)}
+                ${movie.genres.slice(0, 3).map(genre => genre)}
             </p>
             <p class="movie-card__release-date">
               <a class="movie-card__link" href="https://www.themoviedb.org/movie/${
@@ -27,6 +27,6 @@ export default function renderMovie(movies) {
               
           </li>
         `
-      )
-      .join('');
-  }
+    )
+    .join('');
+}
