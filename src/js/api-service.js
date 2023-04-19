@@ -16,7 +16,14 @@ export default class ApiService {
     return fetch(
       `${BASE_URL}3/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&page=${this.page}&language=en-US&include_adult=false`
     )
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok){
+          if(response.status == 404){
+            throw Error(Notiflix.Notify.failure('Search result not successful. Try again'));
+          }
+          return;
+        }
+        return response.json()})
       .then(response => response.results)
       .then(results => {
         const havePoster = results.filter(result => result.poster_path !== POSTER);

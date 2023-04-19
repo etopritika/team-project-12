@@ -2,8 +2,8 @@ import  Pagination  from 'tui-pagination';
 import refs from './refs';
 // добавлю пока такі стилі які є з пагінацією а коли уже буде видно шо як буду добавляти scss
 import ApiService from './api-service.js';
-import renderMovies from './render-trandFilms';
-import onSearch from "./search-form.js";
+import renderMovies from './card-film-template';
+
 
 const apiService = new ApiService();
 

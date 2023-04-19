@@ -14,9 +14,8 @@
   }
 
   &__title {
-    // font-family: $main-font;
-    // font-style: normal;
-
+    font-family: 'Roboto';
+    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.16;
@@ -25,19 +24,31 @@
     color: $black-clr;
 
     cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+      line-height: 1.33;
+      text-transform: uppercase;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 20px;
+      line-height: 1.2;
+    }
   }
 
   &__info {
     display: flex;
-
-    // font-family: $main-font;
-    // font-style: normal;
 
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
 
     color: $red-clr;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 20px;
+      line-height: 1.2;
+    }
   }
 
   &__link {
