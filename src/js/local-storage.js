@@ -35,14 +35,18 @@ export function addWatchedMovieInLocalStorage() {
     savedMovies = JSON.parse(localStorage.getItem('watched-movies'))
   }
   
-  const isSaved = savedMovies.some(savedMovie => {
-    return savedMovie.overview === overview;
-  })
+  const watchedIndex = savedMovies.findIndex(savedMovie =>
+    savedMovie.overview === overview);
   
-  if (!isSaved) {
-    savedMovies.push(movieDetails);
+  if (watchedIndex !== -1) {
+    savedMovies.splice(watchedIndex, 1);
     localStorage.setItem('watched-movies', JSON.stringify(savedMovies));
+    return; 
   }
+  
+  savedMovies.push(movieDetails);
+  localStorage.setItem('watched-movies', JSON.stringify(savedMovies));
+
 }
 
 export function addQueueMovieInLocalStorage() {
@@ -82,12 +86,15 @@ export function addQueueMovieInLocalStorage() {
     savedMovies = JSON.parse(localStorage.getItem('queue-movies'))
   }
   
-  const isSaved = savedMovies.some(savedMovie => {
-    return savedMovie.overview === overview;
-  })
+  const queueIndex = savedMovies.findIndex(savedMovie =>
+    savedMovie.overview === overview);
   
-  if (!isSaved) {
-    savedMovies.push(movieDetails);
+  if (queueIndex !== -1) {
+    savedMovies.splice(queueIndex, 1);
     localStorage.setItem('queue-movies', JSON.stringify(savedMovies));
+    return; 
   }
+  
+  savedMovies.push(movieDetails);
+  localStorage.setItem('queue-movies', JSON.stringify(savedMovies));
 }
