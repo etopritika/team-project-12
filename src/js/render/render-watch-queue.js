@@ -6,8 +6,8 @@ function renderWatchedMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('watched-movies'));
   
   refs.movieContainer.innerHTML = '';
-
-  if (parsedLocalStorageData === `` || parsedLocalStorageData === null) {
+  console.log(parsedLocalStorageData);
+  if (parsedLocalStorageData.length === 0) {
     Notiflix.Notify.info('Your watched films library is empty');
   }
   else {
@@ -19,9 +19,8 @@ function renderQueueMovies() {
   
   refs.movieContainer.innerHTML = '';
 
-  if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
-    Notiflix.Notify.info('Your queued films library is empty');
-    document.querySelector('.container').style.marginBottom="260px"
+  if (parsedLocalStorageData.length === 0) {
+    Notiflix.Notify.info('Your watched films library is empty');
   }
   else {
     renderMovie(parsedLocalStorageData);
