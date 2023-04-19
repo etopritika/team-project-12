@@ -60,7 +60,7 @@ body.show-modal .modal-backdrop {
 
    @media screen and (min-width: 320px) and (max-width: 767px) {
     min-width: 280px;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 }
@@ -147,6 +147,7 @@ display: flex;
 .modal-item-list{
     margin-bottom: 8px;
     display: flex;
+    
 }
 .modal-item-list:last-child{
     margin-bottom: 0px;
@@ -174,6 +175,20 @@ display: flex;
 // }
 .modal-original-title {
     text-transform: uppercase;
+
+    @media screen and (min-width: 320px)and (max-width: 767px) {
+        margin-left: 17px;
+    }
+}
+
+.genres {
+    @media screen and (min-width: 768px)and (max-width: 1279px) {
+        margin-left: 18px;
+    }
+
+    @media screen and (min-width: 320px)and (max-width: 767px) {
+        margin-left: 32px;
+    }
 }
 
 .modal-about {
@@ -233,16 +248,16 @@ display: flex;
         
 }
 .modal-add-watched:hover{
-    background-color: rgba(255, 255, 255, 1);
-    color: rgba(185, 47, 44, 1);
+    background-color:$hover-red-color;
+    color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(0, 0, 0, 1);
     box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
     
 
 .modal-add-queue {
-    background-color: rgba(255, 255, 255, 1);
-    color: rgba(185, 47, 44, 1);
+    background-color: rgba(185, 47, 44, 1);
+    color: rgba(255, 255, 255, 1);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 0, 0, 1);
     font-family: inherit;
@@ -264,7 +279,7 @@ display: flex;
 }
 
 .modal-add-queue:hover{
-    background-color: rgba(185, 47, 44, 1);
+    background-color:$hover-red-color;
     color: rgba(255, 255, 255, 1);
     border: none;
     box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -273,14 +288,19 @@ display: flex;
 .close-modal{
  position: absolute;
  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    top: 8px;
-    right: 8px;;
+    top:8px;
+    right: 8px;
     width: 30px;
    height: 30px;
    border: none;
    border-radius: 50%;
    cursor: pointer;
    background: transparent;
+
+   @media screen and (min-width: 320px)and (max-width: 767px) {
+    top: 8px;
+    right: 8px;
+}
 }
 .close-modal:hover{fill: rgba(185, 47, 44, 1);
     background-color: rgba(185, 47, 44, 1);
@@ -288,3 +308,5 @@ display: flex;
     color: aliceblue
     
 }
+
+
