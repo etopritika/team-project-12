@@ -26,6 +26,7 @@ export default function renderMovies(movies) {
               <div class="movie-card__info">
               <p class="movie-card__genre">
               ${movie.genre_ids
+                .slice(0, 3)
                 .map(
                   genre_id =>
                     `<a class="movie-card__link" href="https://www.themoviedb.org/genre/${genre_id}">${getGenreId(
