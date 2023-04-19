@@ -1,13 +1,10 @@
 import ApiService from './api-service.js';
+import refs from './refs';
 const apiService = new ApiService();
 import { addWatchedMovieInLocalStorage } from './local-storage.js';
 import { addQueueMovieInLocalStorage } from './local-storage.js';
 
-const refs = {
-  modalConteiner: document.querySelector('.modal-conteiner'),
-  closeModalBtn: document.querySelector('.close-modal'),
-  backdrop: document.querySelector('.js-backdrop'),
-};
+
 
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);

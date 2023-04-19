@@ -1,5 +1,5 @@
 import Notiflix from 'notiflix';
-const movieTrand = document.querySelector('.movie-cards');
+import refs from './refs'
 
 function renderMyLibrary() {
   const parsedWatched = JSON.parse(localStorage.getItem('watched-movies')) || [];
@@ -8,15 +8,14 @@ function renderMyLibrary() {
   if(allParsedMovies.length === 0) {
     Notiflix.Notify.info('Your films library is empty');
   }
-  const movieContainer = document.querySelector('.movie-cards');
-  movieContainer.innerHTML = '';
-  
+
+  refs.movieContainer.innerHTML = '';
   renderMovie(allParsedMovies);
 }
 
 
 function renderMovie(movies) {
-  movieTrand.innerHTML = movies
+  refs.movieTrand.innerHTML = movies
     .map(
       movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">
@@ -44,6 +43,11 @@ function renderMovie(movies) {
     )
     .join('');
 }
-const btnMyLibrary = document.querySelector('.library_button');
-btnMyLibrary.addEventListener('click', renderMyLibrary);
+
+refs.btnMyLibrary.addEventListener('click', renderMyLibrary);
+
+refs.btnMyLibrary.onclick=function(){
+  document.getElementById('tui-pagination-container').hidden=true;
+  document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
+}
 
