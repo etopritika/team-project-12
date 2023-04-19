@@ -1,78 +1,63 @@
+import refs from './refs';
 import ApiService from './api-service.js';
 import renderMovies from './render-trandFilms';
 
 const apiService = new ApiService();
-const movieTrand = document.querySelector('.movie-cards');
-
-// кнопки основної сторінки
-const libraryButton = document.querySelector('.library_button');
-const homeButton = document.querySelector('.home_button');
-// const logoArea = document.querySelector('.logo');
-const form = document.querySelector('.search-form');
-const headerOrange = document.querySelector('.header');
-
-// ДОБАВИЛ НА КНОПУ ПОЯВЛЕНИЕ КНОПОК БИБЛИОТЕКИ
-const buttomLibrary = document.querySelector('.headermenu__buttons');
-const buttomLibW = document.querySelector('.btnW');
-const buttomLibQ = document.querySelector('.btnQ');
-
-// блок з кнопками бібліотеки
-const divLibraryButtons = document.querySelector('.library__buttons');
 
 // відкриття бібліотеки
-libraryButton.addEventListener('click', clickLibraryButton);
-libraryButton.onclick=function(){
+refs.libraryButton.addEventListener('click', clickLibraryButton);
+refs.libraryButton.onclick=function(){
   document.getElementById('tui-pagination-container').hidden=true;
   document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
 }
-buttomLibW.addEventListener('click', clickLibAdd);
-buttomLibQ.addEventListener('click', clickLibRem);
+refs.buttomLibW.addEventListener('click', clickLibAdd);
+refs.buttomLibQ.addEventListener('click', clickLibRem);
 
 // вікриття головної сторінки
-homeButton.addEventListener('click', showMainPage);
-homeButton.onclick=function(){
+refs.homeButton.addEventListener('click', showMainPage);
+refs.homeButton.onclick=function(){
   document.getElementById('tui-pagination-container').hidden=false;
   document.querySelector(".movie-cards-wrapper").style.marginBottom = "0px";
 }
 
 // logoArea.addEventListener('click', showMainPage);
 function clickLibAdd() {
-  buttomLibW.classList.add('lbr-active');
-  buttomLibQ.classList.remove('lbr-active');
+  refs.buttomLibW.classList.add('lbr-active');
+  refs.buttomLibQ.classList.remove('lbr-active');
 }
 function clickLibRem() {
-  buttomLibQ.classList.add('lbr-active');
-  buttomLibW.classList.remove('lbr-active');
+  refs.buttomLibQ.classList.add('lbr-active');
+  refs.buttomLibW.classList.remove('lbr-active');
 }
 
 // функція для відкриття бібліотеки
 function clickLibraryButton() {
   // для зміни кольору фону
-  libraryButton.classList.add('is_active');
-  homeButton.classList.remove('is_active');
+  refs.libraryButton.classList.add('is_active');
+  refs.homeButton.classList.remove('is_active');
   // для появи кнопок на екрані
-  divLibraryButtons.classList.remove('is_hiden');
+  refs.divLibraryButtons.classList.remove('is_hiden');
   // приховання форми
-  form.classList.add('is_hidden');
-  buttomLibrary.classList.add('is_activity');
-  headerOrange.classList.add('header-orange');
+  refs.form.classList.add('is_hidden');
+  refs.buttomLibrary.classList.add('is_activity');
+  refs.headerOrange.classList.add('header-orange');
 }
 
 // фунція для яповернення розмітки на головній сторінці
 function showMainPage() {
   // для зміни кольору фону
-  libraryButton.classList.remove('is_active');
-  homeButton.classList.add('is_active');
+  refs.libraryButton.classList.remove('is_active');
+  refs.homeButton.classList.add('is_active');
   // для приховання кнопок бібліотеки на екрані
-  divLibraryButtons.classList.add('is_hiden');
+  refs.divLibraryButtons.classList.add('is_hiden');
   // поява форми
-  form.classList.remove('is_hiden');
-  buttomLibrary.classList.remove('is_activity');
-  form.classList.remove('is_hidden');
-  headerOrange.classList.remove('header-orange');
+  refs.form.classList.remove('is_hiden');
+  refs.buttomLibrary.classList.remove('is_activity');
+  refs.form.classList.remove('is_hidden');
+  refs.headerOrange.classList.remove('header-orange');
 }
 
-homeButton.addEventListener('click', () => {
+refs.homeButton.addEventListener('click', () => {
   apiService
     .fetchTrending()
     .then(response => response.results)

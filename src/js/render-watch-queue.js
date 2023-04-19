@@ -1,10 +1,11 @@
 import Notiflix from 'notiflix';
-const movieTrand = document.querySelector('.movie-cards');
+import refs from './refs';
+
 
 function renderWatchedMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('watched-movies'));
-  const movieContainer = document.querySelector('.movie-cards');
-  movieContainer.innerHTML = '';
+  
+  refs.movieContainer.innerHTML = '';
 
   if (parsedLocalStorageData === `` || parsedLocalStorageData === null) {
     // const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
@@ -23,8 +24,8 @@ function renderWatchedMovies() {
 }
 function renderQueueMovies() {
   const parsedLocalStorageData = JSON.parse(localStorage.getItem('queue-movies'));
-  const movieContainer = document.querySelector('.movie-cards');
-  movieContainer.innerHTML = '';
+  
+  refs.movieContainer.innerHTML = '';
 
   if (parsedLocalStorageData === ``  || parsedLocalStorageData === null) {
     Notiflix.Notify.info('Your queued films library is empty');
@@ -41,7 +42,7 @@ function renderQueueMovies() {
 
 function renderMovie(movies) {
   // console.log(movies);
- movieTrand.innerHTML = movies
+ refs.movieTrand.innerHTML = movies
     .map(
       movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">
@@ -69,9 +70,7 @@ function renderMovie(movies) {
     )
     .join('');
 }
-const btnWatched = document.querySelector('.btn-watched');
-btnWatched.addEventListener('click', renderWatchedMovies);
 
-const btnQueue = document.querySelector('.btn-queue');
-btnQueue.addEventListener('click', renderQueueMovies);
+refs.btnWatched.addEventListener('click', renderWatchedMovies);
+refs.btnQueue.addEventListener('click', renderQueueMovies);
 

@@ -1,8 +1,9 @@
 import ApiService from './api-service.js';
 import genres from '../data/genres';
+import refs from './refs';
 
 const apiService = new ApiService();
-const movieTrand = document.querySelector('.movie-cards');
+
 
 function getGenreId(genreId) {
   const genre = genres.genres.find(function (genre) {
@@ -16,7 +17,7 @@ function getGenreId(genreId) {
 }
 
 export default function renderMovies(movies) {
-  movieTrand.innerHTML = movies
+  refs.movieTrand.innerHTML = movies
     .map(
       movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">
@@ -59,11 +60,9 @@ apiService
   .catch(error => console.log(error));
 
 window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader');
-
-    loader.classList.add('loader-hidden');
-
-    loader.addEventListener('transitionend', () => {
+   
+    refs.loader.classList.add('loader-hidden');
+    refs.loader.addEventListener('transitionend', () => {
         // document.body.removeChild(loader);
     })
 });
