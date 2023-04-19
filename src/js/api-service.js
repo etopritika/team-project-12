@@ -27,8 +27,6 @@ export default class ApiService {
       .then(response => response.results)
       .then(results => {
         const havePoster = results.filter(result => result.poster_path !== POSTER);
-        // const langFilter = havePoster.filter(result => result.original_language === LANGUAGE);
-        // console.log(results);
         if(havePoster.length === 0) {
           Notiflix.Notify.failure('Search result not successful. Enter the correct movie name.');
           return;

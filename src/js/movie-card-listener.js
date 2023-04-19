@@ -3,7 +3,7 @@ import { onOpenModal } from "./modal.js";
 import { appendModalMarkup } from "./template/modal-card-template.js";
 import refs from './refs/refs.js';
 
-// console.log(modalElement);
+
 const apiService = new ApiService();
 
 
@@ -16,6 +16,6 @@ export default refs.filmContainer.onclick = (e) => {
       
       apiService.fetchDetails().then(appendModalMarkup);
       onOpenModal();
-    //   console.log(currentCard);
+   
     }
   }

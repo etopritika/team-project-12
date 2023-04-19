@@ -21,7 +21,7 @@
         toggleModal(event);
       };
     });
-    // document.addEventListener(footerTeamModal)
+   
 
   
     function toggleModal(event) {

@@ -1,7 +1,6 @@
 import refs from '../refs/refs';
 
 export default function renderMovie(movies) {
-  // console.log(movies);
   refs.movieTrand.innerHTML = movies
     .map(
       movie => `

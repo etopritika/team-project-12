@@ -3,7 +3,6 @@ import { addWatchedMovieInLocalStorage } from '../local-storage.js';
 import { addQueueMovieInLocalStorage } from '../local-storage.js';
 
 export function appendModalMarkup(movie) {
-  // console.log(movie)
   const cardOfFilms = `
   
      <div class="modal-card" data-film-id="${movie.id}">
