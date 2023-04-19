@@ -1,17 +1,17 @@
 import ApiService from './api-service';
 import genres from '../data/genres';
-
+import refs from './refs';
 const apiService = new ApiService();
-const movieTrand = document.querySelector('.movie-cards');
-const loader = document.querySelector('.loader');
 
-const form = document.querySelector('#search-form');
-form.addEventListener('submit', onSearch);
+
+
+
+refs.form.addEventListener('submit', onSearch);
 
 export function onSearch(e) {
   e.preventDefault();
   apiService.query = e.currentTarget.elements.query.value;
-  loader.classList.remove('loader-hidden'); // показати спінер
+  refs.loader.classList.remove('loader-hidden'); // показати спінер
   fetchSearchMovies();
   hidePagination();
   // const clearPagination = document.querySelector(".tui-pagination");
@@ -21,7 +21,7 @@ export function onSearch(e) {
 function fetchSearchMovies() {
   apiService.fetchArticles().then(renderMovies)//Повертає масив пошуку фільму
         .finally(() => {
-      loader.classList.add('loader-hidden'); // приховати спінер
+      refs.loader.classList.add('loader-hidden'); // приховати спінер
     });
 }
 
@@ -44,7 +44,7 @@ function getGenreId(genreId) {
 
 function renderMovies(movies) {
   try {
-    movieTrand.innerHTML = movies
+    refs.movieTrand.innerHTML = movies
     .map(
       movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">

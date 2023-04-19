@@ -1,5 +1,5 @@
 import  Pagination  from 'tui-pagination';
-
+import refs from './refs';
 // добавлю пока такі стилі які є з пагінацією а коли уже буде видно шо як буду добавляти scss
 import ApiService from './api-service.js';
 import renderMovies from './render-trandFilms';
@@ -10,9 +10,9 @@ const apiService = new ApiService();
 // отримання поточної сторінки
 
 
-const container = document.getElementById('tui-pagination-container');
 
-const pagination = new Pagination(container, {
+
+const pagination = new Pagination(refs.container, {
   totalItems: 1000,
   itemsPerPage: 20,
   visiblePages: 5,
