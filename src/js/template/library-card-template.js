@@ -1,19 +1,8 @@
-import genres from '../data/genres';
-import refs from './refs';
+import refs from '../refs/refs';
 
-function getGenreId(genreId) {
-  const genre = genres.genres.find(function (genre) {
-    return genre.id === genreId;
-  });
-  if (genre) {
-    return genre.name;
-  } else {
-    return '';
-  }
-}
-
-export default function renderMovies(movies) {
-    refs.movieTrand.innerHTML = movies
+export default function renderMovie(movies) {
+    // console.log(movies);
+   refs.movieTrand.innerHTML = movies
       .map(
         movie => `
           <li class="movie-card__item" data-film-id="${movie.id}">
@@ -25,14 +14,7 @@ export default function renderMovies(movies) {
               </h2>
               <div class="movie-card__info">
               <p class="movie-card__genre">
-              ${movie.genre_ids
-                .map(
-                  genre_id =>
-                    `<a class="movie-card__link" href="https://www.themoviedb.org/genre/${genre_id}">${getGenreId(
-                      genre_id
-                    )}</a>`
-                )
-                .join(', ')}
+                ${movie.genres.map(genre => genre)}
             </p>
             <p class="movie-card__release-date">
               <a class="movie-card__link" href="https://www.themoviedb.org/movie/${

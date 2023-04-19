@@ -1,11 +1,8 @@
 import ApiService from './api-service';
-import genres from '../data/genres';
-import refs from './refs';
-import renderMovies from "./card-film-template";
+import genres from './data/genres.json';
+import refs from './refs/refs';
+import renderMovies from './template/card-film-template';
 const apiService = new ApiService();
-
-
-
 
 refs.form.addEventListener('submit', onSearch);
 
@@ -20,17 +17,18 @@ export function onSearch(e) {
 }
 
 function fetchSearchMovies() {
-  apiService.fetchArticles().then(renderMovies)//Повертає масив пошуку фільму
-        .finally(() => {
+  apiService
+    .fetchArticles()
+    .then(renderMovies) //Повертає масив пошуку фільму
+    .finally(() => {
       refs.loader.classList.add('loader-hidden'); // приховати спінер
     });
 }
 
 function hidePagination() {
-  document.getElementById('tui-pagination-container').hidden=true;
-  document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
+  document.getElementById('tui-pagination-container').hidden = true;
+  document.querySelector('.movie-cards-wrapper').style.marginBottom = '32px';
 }
-
 
 // function getGenreId(genreId) {
 //   const genre = genres.genres.find(function (genre) {
@@ -72,14 +70,14 @@ function hidePagination() {
 //             }?language=en-US">
 //             ${movie.release_date.split('-')[0]}
 //             </a>
-//           </p>  
+//           </p>
 //             </div>
-            
+
 //         </li>
 //       `
 //     )
 //     .join('');
 //   } catch (error) {
-    
+
 //   }
 // }

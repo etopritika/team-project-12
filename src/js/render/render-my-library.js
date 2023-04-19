@@ -1,21 +1,21 @@
 import Notiflix from 'notiflix';
-import refs from './refs'
+import refs from '../refs/refs';
 
 function renderMyLibrary() {
-  const parsedWatched = JSON.parse(localStorage.getItem('watched-movies')) || [];
+  const parsedWatched =
+    JSON.parse(localStorage.getItem('watched-movies')) || [];
   const parsedQueue = JSON.parse(localStorage.getItem('queue-movies')) || [];
   const allParsedMovies = parsedWatched.concat(parsedQueue);
-  if(allParsedMovies.length === 0) {
+  if (allParsedMovies.length === 0) {
     Notiflix.Notify.info('Your films library is empty');
-    document.querySelector('.container').style.marginBottom="238px"
-  }else if(allParsedMovies.length === 1){
-    document.querySelector('.container').style.marginBottom="0px"
+    document.querySelector('.container').style.marginBottom = '238px';
+  } else if (allParsedMovies.length === 1) {
+    document.querySelector('.container').style.marginBottom = '0px';
   }
 
   refs.movieContainer.innerHTML = '';
   renderMovie(allParsedMovies);
 }
-
 
 function renderMovie(movies) {
   refs.movieTrand.innerHTML = movies
@@ -49,8 +49,7 @@ function renderMovie(movies) {
 
 refs.btnMyLibrary.addEventListener('click', renderMyLibrary);
 
-refs.btnMyLibrary.onclick=function(){
-  document.getElementById('tui-pagination-container').hidden=true;
-  document.querySelector(".movie-cards-wrapper").style.marginBottom = "32px";
-}
-
+refs.btnMyLibrary.onclick = function () {
+  document.getElementById('tui-pagination-container').hidden = true;
+  document.querySelector('.movie-cards-wrapper').style.marginBottom = '32px';
+};

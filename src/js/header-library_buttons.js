@@ -1,6 +1,6 @@
-import refs from './refs';
+import refs from './refs/refs';
 import ApiService from './api-service.js';
-import renderMovies from './card-film-template';
+import renderMovies from './template/card-film-template';
 
 const apiService = new ApiService();
 
