@@ -7,7 +7,7 @@ export default function renderMovie(movies) {
           <li class="movie-card__item" data-film-id="${movie.id}">
               <img class="movie-card__image" src="https://image.tmdb.org/t/p/w500/${
                 movie.poster_path
-              }" alt="${movie.title}" />
+              }" alt="${movie.title}" loading="lazy"/>
               <h2 class="movie-card__title">
                 ${movie.title}
               </h2>
