@@ -1,3 +1,5 @@
+import Notiflix from 'notiflix';
+
 export function addWatchedMovieInLocalStorage() {
   const modal = document.querySelector('.modal');
 
@@ -30,22 +32,35 @@ export function addWatchedMovieInLocalStorage() {
     overview
   }
 
-  let savedMovies = [];
-  if (localStorage.getItem('watched-movies')) {
-    savedMovies = JSON.parse(localStorage.getItem('watched-movies'))
+  let savedQueueMovies = [];
+  if (localStorage.getItem('queue-movies')) {
+    savedQueueMovies = JSON.parse(localStorage.getItem('queue-movies'))
   }
-  
-  const watchedIndex = savedMovies.findIndex(savedMovie =>
+
+  const queueIndex = savedQueueMovies.findIndex(savedMovie =>
     savedMovie.overview === overview);
-  
-  if (watchedIndex !== -1) {
-    savedMovies.splice(watchedIndex, 1);
-    localStorage.setItem('watched-movies', JSON.stringify(savedMovies));
-    return; 
+
+  if (queueIndex !== -1) {
+    Notiflix.Notify.info('This movie is already in your library');
+    return;
   }
-  
-  savedMovies.push(movieDetails);
-  localStorage.setItem('watched-movies', JSON.stringify(savedMovies));
+
+  let savedWatchedMovies = [];
+  if (localStorage.getItem('watched-movies')) {
+    savedWatchedMovies = JSON.parse(localStorage.getItem('watched-movies'))
+  }
+
+  const watchedIndex = savedWatchedMovies.findIndex(savedMovie =>
+    savedMovie.overview === overview);
+
+  if (watchedIndex !== -1) {
+    savedWatchedMovies.splice(watchedIndex, 1);
+    localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
+    return;
+  }
+
+  savedWatchedMovies.push(movieDetails);
+  localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
 
 }
 
@@ -81,20 +96,33 @@ export function addQueueMovieInLocalStorage() {
     overview
   }
 
-  let savedMovies = [];
-  if (localStorage.getItem('queue-movies')) {
-    savedMovies = JSON.parse(localStorage.getItem('queue-movies'))
+  let savedWatchedMovies = [];
+  if (localStorage.getItem('watched-movies')) {
+    savedWatchedMovies = JSON.parse(localStorage.getItem('watched-movies'))
   }
-  
-  const queueIndex = savedMovies.findIndex(savedMovie =>
+
+  const watchedIndex = savedWatchedMovies.findIndex(savedMovie =>
     savedMovie.overview === overview);
-  
-  if (queueIndex !== -1) {
-    savedMovies.splice(queueIndex, 1);
-    localStorage.setItem('queue-movies', JSON.stringify(savedMovies));
-    return; 
+
+  if (watchedIndex !== -1) {
+    Notiflix.Notify.info('This movie is already in your library');
+    return;
   }
-  
-  savedMovies.push(movieDetails);
-  localStorage.setItem('queue-movies', JSON.stringify(savedMovies));
+
+  let savedQueueMovies = [];
+  if (localStorage.getItem('queue-movies')) {
+    savedQueueMovies = JSON.parse(localStorage.getItem('queue-movies'))
+  }
+
+  const queueIndex = savedQueueMovies.findIndex(savedMovie =>
+    savedMovie.overview === overview);
+
+  if (queueIndex !== -1) {
+    savedQueueMovies.splice(queueIndex, 1);
+    localStorage.setItem('queue-movies', JSON.stringify(savedQueueMovies));
+    return;
+  }
+
+  savedQueueMovies.push(movieDetails);
+  localStorage.setItem('queue-movies', JSON.stringify(savedQueueMovies));
 }
