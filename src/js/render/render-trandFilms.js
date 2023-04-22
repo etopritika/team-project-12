@@ -1,5 +1,7 @@
+
 import ApiService from '../api-service.js';
 import renderMovies from '../template/card-film-template.js';
+
 const apiService = new ApiService();
 
 apiService
@@ -12,7 +14,7 @@ window.addEventListener('load', () => {
 
   loader.classList.add('loader-hidden');
 
-  loader.addEventListener('transitionend', () => {
-    
-  });
+  loader.addEventListener('transitionend', () => {});
 });
+
+
