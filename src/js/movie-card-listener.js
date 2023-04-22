@@ -8,7 +8,7 @@ const apiService = new ApiService();
 
 
 //Прослуховувач подій
-export default refs.filmContainer.onclick = (e) => {
+export default refs.movieContainer.onclick = (e) => {
     let currentCard = e.target.closest("li");
     
     if(currentCard) {

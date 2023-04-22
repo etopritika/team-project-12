@@ -21,11 +21,11 @@ function renderMovie(movies) {
   // loader.id = 'loader';
   // document.body.appendChild(loader);
 
-  refs.movieTrand.innerHTML = '';
+  refs.movieContainer.innerHTML = '';
   // refs.movieTrand.appendChild(loader);
 
   setTimeout(() => {
-    refs.movieTrand.innerHTML = movies
+    refs.movieContainer.innerHTML = movies
       .map(
         movie => `
         <li class="movie-card__item" data-film-id="${movie.id}">

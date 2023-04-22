@@ -13,7 +13,7 @@ function getGenreId(genreId) {
 }
 
 export default function renderMovies(movies) {
-  refs.movieTrand.innerHTML = movies
+  refs.movieContainer.innerHTML = movies
     .map(
       movie => `
           <li class="movie-card__item" data-film-id="${movie.id}">

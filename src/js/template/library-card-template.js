@@ -1,7 +1,7 @@
 import refs from '../refs/refs';
 
 export default function renderMovie(movies) {
-  refs.movieTrand.innerHTML = movies
+  refs.movieContainer.innerHTML = movies
     .map(
       movie => `
           <li class="movie-card__item" data-film-id="${movie.id}">
