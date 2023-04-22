@@ -51,7 +51,10 @@ export function appendModalMarkup(movie) {
   refs.modalConteiner.insertAdjacentHTML('beforeend', cardOfFilms);
   const btnAddToWatched = document.querySelector('.modal-add-watched');
   const btnAddToQueue = document.querySelector('.modal-add-queue');
-
+  btnAddToWatched.onclick=()=>
+  document.querySelector('.movie-card__item').remove();
+  btnAddToQueue.onclick=()=>
+  document.querySelector('.movie-card__item').remove();
   btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
   btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
 }
