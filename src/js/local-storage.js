@@ -1,4 +1,6 @@
 import Notiflix from 'notiflix';
+import refs from './refs/refs';
+import { appendModalMarkup } from './template/modal-card-template'
 
 export function addWatchedMovieInLocalStorage() {
   const modal = document.querySelector('.modal');
@@ -55,9 +57,18 @@ export function addWatchedMovieInLocalStorage() {
 
   if (watchedIndex !== -1) {
     savedWatchedMovies.splice(watchedIndex, 1);
-    localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
+    localStorage.setItem('watched-movies', JSON.stringify(savedQueueMovies));
     return;
   }
+// варіант
+  //   if (watchedIndex !== -1) {
+  //   btnAddToWatched.textContent = "Remove film";
+  //   btnAddToWatched.addEventListener('click', () => {
+  //     savedWatchedMovies.splice(watchedIndex, 1);
+  //     localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
+  //   })
+  //   return;
+  // }
 
   savedWatchedMovies.push(movieDetails);
   localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
@@ -125,4 +136,37 @@ export function addQueueMovieInLocalStorage() {
 
   savedQueueMovies.push(movieDetails);
   localStorage.setItem('queue-movies', JSON.stringify(savedQueueMovies));
+}
+
+// один з варіантів поки не працює
+export function removeFromWatched() {
+  const overview = document.querySelector('.modal-overview').textContent;
+  let savedWatchedMovies = [];
+  if (localStorage.getItem('watched-movies')) {
+    savedWatchedMovies = JSON.parse(localStorage.getItem('watched-movies'));
+  }
+
+  const watchedIndex = savedWatchedMovies.findIndex(savedMovie => savedMovie.overview === overview);
+
+  if (watchedIndex !== -1) {
+    savedWatchedMovies.splice(watchedIndex, 1);
+    localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
+    refs.btnAddToWatched.textContent = 'Add to watched';
+  }
+}
+
+export function removeFromQueue() {
+  const overview = document.querySelector('.modal-overview').textContent;
+  let savedQueueMovies = [];
+  if (localStorage.getItem('queue-movies')) {
+    savedQueueMovies = JSON.parse(localStorage.getItem('queue-movies'));
+  }
+
+  const queueIndex = savedQueueMovies.findIndex(savedMovie => savedMovie.overview === overview);
+
+  if (queueIndex !== -1) {
+    savedQueueMovies.splice(queueIndex, 1);
+    localStorage.setItem('queue-movies', JSON.stringify(savedQueueMovies));
+    refs.btnAddToQueue.textContent = 'Add to queue';
+  }
 }

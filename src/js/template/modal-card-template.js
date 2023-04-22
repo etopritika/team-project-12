@@ -1,6 +1,8 @@
 import refs from '../refs/refs';
 import { addWatchedMovieInLocalStorage } from '../local-storage.js';
 import { addQueueMovieInLocalStorage } from '../local-storage.js';
+import { removeFromQueue } from '../local-storage.js';
+import { removeFromWatched } from '../local-storage.js';
 
 export function appendModalMarkup(movie) {
   const cardOfFilms = `
@@ -54,4 +56,24 @@ export function appendModalMarkup(movie) {
 
   btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
   btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
+
+
+// один з варіантів поки не працює
+btnAddToWatched.addEventListener('click', () => {
+  if (btnAddToWatched.textContent === 'Add to watched') {
+    addWatchedMovieInLocalStorage();
+    btnAddToWatched.textContent = 'Remove from watched';
+  } else {
+    removeFromWatched();
+  }
+});
+
+btnAddToQueue.addEventListener('click', () => {
+  if (btnAddToQueue.textContent === 'Add to queue') {
+    addQueueMovieInLocalStorage();
+    btnAddToQueue.textContent = 'Remove from queue';
+  } else {
+    removeFromQueue();
+  }
+});
 }
