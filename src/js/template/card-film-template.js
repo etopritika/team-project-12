@@ -1,19 +1,8 @@
-import genres from '../data/genres.json';
 import refs from '../refs/refs';
-
-function getGenreId(genreId) {
-  const genre = genres.genres.find(function (genre) {
-    return genre.id === genreId;
-  });
-  if (genre) {
-    return genre.name;
-  } else {
-    return '';
-  }
-}
+import getGenreId from '../get-genre-id';
 
 export default function renderMovies(movies) {
-  refs.movieTrand.innerHTML = movies
+  refs.movieContainer.innerHTML = movies
     .map(
       movie => `
           <li class="movie-card__item" data-film-id="${movie.id}">

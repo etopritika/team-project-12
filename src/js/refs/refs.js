@@ -5,10 +5,7 @@ const refs = {
 
   // Рефы Фильмы:
 
-  movieTrand: document.querySelector('.movie-cards'),
-  movieTrand: document.querySelector('.movie-cards'),
   movieContainer: document.querySelector('.movie-cards'),
-  filmContainer: document.querySelector('.movie-cards'),
 
   // Рефы Загрузки:
 
