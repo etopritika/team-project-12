@@ -13,7 +13,6 @@ export function onOpenModal() {
   const loader_m = document.createElement('div');
   loader_m.classList.add('loader-modal');
   document.body.appendChild(loader_m);
-
   setTimeout(() => {
   loader_m.classList.add('loader-hidden-modal');
   }, 200);
@@ -22,6 +21,7 @@ export function onOpenModal() {
   setTimeout(() => {
   document.body.classList.add('show-modal');
   }, 300);
+
   
 }
 
@@ -46,4 +46,5 @@ function onEscKeyPress(event) {
 function clearAppendModalMarkup() {
   refs.modalConteiner.innerHTML = '';
 }
+
 

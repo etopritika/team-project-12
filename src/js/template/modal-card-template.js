@@ -36,14 +36,18 @@ export function appendModalMarkup(movie) {
           </li>
          <li class="modal-item-list">
             <div class="modal-item-genres"> <span > Genre</span></div>
-            <div> ${movie.genres.map( genre => `<span > ${genre.name} </span>`).join(',&nbsp')}</div>
+            <div> ${movie.genres
+              .map(genre => `<span > ${genre.name} </span>`)
+              .join(',&nbsp')}</div>
           </li>
      </ul>
      <h3 class="modal-about">ABOUT</h3>
      <p class="modal-overview">${movie.overview}</p>
      <div class="modal-btn">
-     <button class="modal-add-watched">ADD TO WATCHED</button>
-     <button class="modal-add-queue">ADD TO QUEUE</button>
+     <button class="modal-add-watched">${checkWatchedFilm(
+       movie.overview
+     )}</button>
+     <button class="modal-add-queue">${checkQueueFilm(movie.overview)}</button>
      </div>
      </div>
      </div>`;
@@ -51,10 +55,44 @@ export function appendModalMarkup(movie) {
   refs.modalConteiner.insertAdjacentHTML('beforeend', cardOfFilms);
   const btnAddToWatched = document.querySelector('.modal-add-watched');
   const btnAddToQueue = document.querySelector('.modal-add-queue');
-  btnAddToWatched.onclick=()=>
-  document.querySelector('.movie-card__item').remove();
-  btnAddToQueue.onclick=()=>
-  document.querySelector('.movie-card__item').remove();
+  btnAddToWatched.onclick = () =>
+    document.querySelector('.movie-card__item').remove();
+  btnAddToQueue.onclick = () =>
+    document.querySelector('.movie-card__item').remove();
   btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
   btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
+}
+
+function checkWatchedFilm(overview) {
+  let savedWatchedMovies = [];
+  if (localStorage.getItem('watched-movies')) {
+    savedWatchedMovies = JSON.parse(localStorage.getItem('watched-movies'));
+  }
+
+  const watchedIndex = savedWatchedMovies.findIndex(
+    savedMovie => savedMovie.overview === overview
+  );
+
+  if (watchedIndex !== -1) {
+    return 'Remove from Watched';
+  } else {
+    return 'Add to watched';
+  }
+}
+
+function checkQueueFilm(overview) {
+  let savedWatchedMovies = [];
+  if (localStorage.getItem('queue-movies')) {
+    savedWatchedMovies = JSON.parse(localStorage.getItem('queue-movies'));
+  }
+
+  const watchedIndex = savedWatchedMovies.findIndex(
+    savedMovie => savedMovie.overview === overview
+  );
+
+  if (watchedIndex !== -1) {
+    return 'Remove from Queue';
+  } else {
+    return 'Add to Queue';
+  }
 }
