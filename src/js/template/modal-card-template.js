@@ -59,8 +59,8 @@ export function appendModalMarkup(movie) {
   //   // document.querySelector('.movie-card__item').remove();
   // btnAddToQueue.onclick = () =>
   //   // document.querySelector('.movie-card__item').remove();
-  // btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
-  // btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
+  btnAddToWatched.addEventListener('click', addWatchedMovieInLocalStorage);
+  btnAddToQueue.addEventListener('click', addQueueMovieInLocalStorage);
 }
 
 function checkWatchedFilm(overview) {

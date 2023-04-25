@@ -172,20 +172,4 @@ export function addQueueMovieInLocalStorage() {
   localStorage.setItem('queue-movies', JSON.stringify(savedQueueMovies));
 }
 
-// один з варіантів поки не працює
-// export function removeFromWatched() {
-//   const overview = document.querySelector('.modal-overview').textContent;
-//   let savedWatchedMovies = [];
-//   if (localStorage.getItem('watched-movies')) {
-//     savedWatchedMovies = JSON.parse(localStorage.getItem('watched-movies'));
-//   }
-
-//   const watchedIndex = savedWatchedMovies.findIndex(savedMovie => savedMovie.overview === overview);
-
-//   if (watchedIndex !== -1) {
-//     savedWatchedMovies.splice(watchedIndex, 1);
-//     localStorage.setItem('watched-movies', JSON.stringify(savedWatchedMovies));
-//     refs.btnAddToWatched.textContent = 'Add to watched';
-//   }
-// }
 
